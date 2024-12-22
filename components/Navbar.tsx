@@ -21,7 +21,12 @@ const Navbar = () => {
         ))}
       </ul>
       <div className="lg:flexCenter  hidden">
-        <Button></Button>
+        <Button
+        type="button"
+        title="login"
+        icon="/"
+        variant=""
+        ></Button>
       </div>
     </nav>
   );
