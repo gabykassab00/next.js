@@ -31,6 +31,15 @@ body {
     @apply border-gray-20 bg-green-90 px-8 py-5 text-white
   }
   
+  .btn_blue {
+    @apply px-8 py-4 text-white transition-all;
+    background-color: #1976d2;
+    &:hover {
+      background-color: #1259a2; /* Slightly darker shade for hover effect */
+    }
+  }
+  
+
   .max-container {
     @apply mx-auto max-w-[1440px];
   }
