@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Button from "./Button";
 
 const Hero = () => {
   return (
@@ -20,7 +21,17 @@ const Hero = () => {
         The smartest Ai Analyzer and chosen by many top professional clubs to capture,
         review,share and analyze your games & training sessions
         </p>
+        <div className="flex w-full gap-3 sm:flex-row">
+            <Button
+            type="button"
+            title = 'try software'
+            variant="btn_blue"
+            ></Button>
+
+        </div>
       </div>
+      {/*right */}
+      
     </section>
   );
 };
