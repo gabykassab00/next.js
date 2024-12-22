@@ -1,3 +1,4 @@
+import { FEATURES } from "@/constants";
 import Image from "next/image";
 import React from "react";
 
@@ -25,11 +26,21 @@ const Clients = () => {
                 ></Image>
                 <h2 className="bold-40 lg:bold-64">Our Clients</h2>
             </div>
-            <ul></ul>
+            <ul>
+                {FEATURES.map((feature)=>(
+                    <featureItem/>
+                ))}
+            </ul>
         </div>
       </div>
     </section>
   );
 };
-
+const featureItem =({title})=>{
+    return (
+        <div>
+            {title}
+        </div>
+    )
+}
 export default Clients;
