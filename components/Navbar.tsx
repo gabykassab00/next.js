@@ -25,9 +25,11 @@ const Navbar = () => {
         type="button"
         title="login"
         icon="/user.svg"
-        variant=""
+        variant="btn_blue"
         ></Button>
       </div>
+
+      <Image src="/menu.svg" alt="menu" width={32} height={32} className="inline-block cursor-pointer lg:hidden"></Image>
     </nav>
   );
 };
