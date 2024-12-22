@@ -21,8 +21,11 @@ const Clients = () => {
                 alt="clients page image"
                 width={50}
                 height={50}
+                className="absolute left-[-5px] top-[-28px] w-10 lg:w-[50px] "
                 ></Image>
+                <h2 className="bold-40 lg:bold-64">Our Clients</h2>
             </div>
+            <ul></ul>
         </div>
       </div>
     </section>
