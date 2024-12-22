@@ -28,7 +28,13 @@ const Clients = () => {
             </div>
             <ul>
                 {FEATURES.map((feature)=>(
-                    <featureItem/>
+                    <FeatureItem 
+                    key={feature.title}
+                    title={feature.title} 
+                    icon={feature.icon}
+                    variant={feature.variant}
+                    description={feature.description}
+                    />
                 ))}
             </ul>
         </div>
@@ -36,7 +42,15 @@ const Clients = () => {
     </section>
   );
 };
-const featureItem =({title})=>{
+
+type featureItem = {
+    title: string;
+    icon: string;
+    variant: string;
+    description: string;
+}
+
+const FeatureItem =({title,icon,variant,description}:featureItem)=>{
     return (
         <div>
             {title}
