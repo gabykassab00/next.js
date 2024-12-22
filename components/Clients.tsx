@@ -52,9 +52,14 @@ type featureItem = {
 
 const FeatureItem =({title,icon,variant,description}:featureItem)=>{
     return (
-        <div>
-            {title}
+    <li className="flex w-full flex-1 flex-col items-start">
+        <div className="rounded-full p-4 lg:p-7">
+            <Image src={icon} alt="map" width={28} height={28}/>
         </div>
+
+            {title}
+        
+    </li>
     )
 }
 export default Clients;
