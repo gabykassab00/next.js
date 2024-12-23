@@ -39,4 +39,41 @@ export const FEATURES = [
   },
 ];
 
+// FOOTER SECTION
+export const FOOTER_LINKS = [
+  {
+    title: 'Learn More',
+    links: [
+      'About Aipro',
+      'Press Releases',
+      'Sports Partnerships',
+      'Jobs',
+      'Privacy Policy',
+      'Contact Us',
+    ],
+  },
+  {
+    title: 'Our Community',
+    links: ['Match Analysis', 'Statistical Analysis', 'Training and Development'],
+  },
+];
+
+export const FOOTER_CONTACT_INFO = {
+  title: 'Contact Us',
+  links: [
+    { label: 'Admin Officer', value: '123-456-7890' },
+    { label: 'Email Officer', value: 'Aipro@mail.com' },
+  ],
+};
+
+export const SOCIALS = {
+  title: 'Social',
+  links: [
+    '/facebook.svg',
+    '/instagram.svg',
+    '/twitter.svg',
+    '/youtube.svg',
+    '/wordpress.svg',
+  ],
+};
   
