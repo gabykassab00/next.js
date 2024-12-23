@@ -40,18 +40,20 @@ const Footer = () => {
               </Footercolumn>
             </div>
             <div className="flex flex-col gap-5">
-                <Footercolumn title={SOCIALS.title}>
-                    <ul className="regular-14 flex gap-4 text-gray-30">
-                        {SOCIALS.links.map((link)=>(
-                            <Link href="/" key={link}>
-                                <Image src={link} alt="logo" width={24} height={24} />
-                            </Link>
-                        ))}
-                    </ul>
-                </Footercolumn>
+              <Footercolumn title={SOCIALS.title}>
+                <ul className="regular-14 flex gap-4 text-gray-30">
+                  {SOCIALS.links.map((link) => (
+                    <Link href="/" key={link}>
+                      <Image src={link} alt="logo" width={24} height={24} />
+                    </Link>
+                  ))}
+                </ul>
+              </Footercolumn>
             </div>
           </div>
         </div>
+        <div className="border bg-gray-20"/>
+        <p className="regular-14 w-full text-center text-gray-30">2025 AIPRO | all rights reserved</p>
       </div>
     </footer>
   );
