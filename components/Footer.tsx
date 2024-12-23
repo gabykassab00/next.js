@@ -25,6 +25,10 @@ const Footer = () => {
 
 export default Footer;
 
+type Footercolumnprops = {
+    title: string;
+    children: React.ReactNode;
+}
 
 const Footercolumn =({title,children}:Footercolumnprops)=>{
         return (
