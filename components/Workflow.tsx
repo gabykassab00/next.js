@@ -23,7 +23,7 @@ const Workflow = () => {
               layout="fill"
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <img src="/upload.svg" alt="Upload Icon" className="w-16 h-16" />
+              <img src="/upload.svg" alt="Upload Icon" className="w-16 h-16 filter invert " />
             </div>
           </div>
         </div>
@@ -38,6 +38,9 @@ const Workflow = () => {
               className="object-fill"
               layout="fill"
             />
+                        <div className="absolute inset-0 flex items-center justify-center">
+              <img src="/upload.svg" alt="Upload Icon" className="w-16 h-16 filter invert " />
+            </div>
           </div>
         </div>
         <div
