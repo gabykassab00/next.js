@@ -82,12 +82,15 @@ const Workflow = () => {
               className="object-fill"
               layout="fill"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
               <img
                 src="/improve.svg"
                 alt="Upload Icon"
                 className="w-16 h-16 filter invert "
               />
+              <p className="mt-4 text-white text-lg font-semibold text-center">
+                Improve
+              </p>
             </div>
           </div>
         </div>
