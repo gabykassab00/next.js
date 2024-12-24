@@ -28,11 +28,11 @@ const Workflow = () => {
           className="flex shadow-md h-96  flex-col0"
           style={{ height: "500px" }}
         >
-          <div className="relative w-full ">
+          <div className="relative w-full h-full">
             <Image
-              src={"/upload.jpg"}
+              src={"/share.avif"}
               alt="upload"
-              className="object-cover"
+              className="object-fill"
               layout="fill"
             />
           </div>
