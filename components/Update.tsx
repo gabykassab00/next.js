@@ -39,7 +39,7 @@ const Update = () => {
           </div>
           <div className="text-center mt-4">
             <p className="text-2xl font-semibold text-blue-500" color="blue">
-              Introducing AIpro Editor
+            AIpro’s Tactical Feed 
             </p>
             <p className="text-sm">
               Explore AIpro Editor's latest updates: New Label Window, Project
