@@ -64,7 +64,11 @@ const Review = () => {
                         <div className="mt-10">
                             <div className="flex items-center space-x-4">
                                 <Image src={data.image} width={60} height={60} alt="client" className="rounded-full"></Image>
-                                
+                                <div>
+                                    <p className="text-sm sm:text-lg font-semibold">{data.name}</p>
+                                    <p className="text-gray-600 text-xs sm:text-base">{data.rank}</p>
+                                    <p className="text-gray-700 text-xs sm:text-base">{data.club}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
