@@ -18,8 +18,54 @@ const Update = () => {
             />
           </div>
           <div className="text-center mt-4">
-            <p className="text-2xl font-semibold text-blue-500" color="blue">Introducing AIpro Editor</p>
-            <p className="text-sm">Explore AIpro Editor's latest updates: New Label Window, Project Label Preset, and the launch of Editor Premium to elevate your video clipping and coding experience!</p>
+            <p className="text-2xl font-semibold text-blue-500" color="blue">
+              Introducing AIpro Editor
+            </p>
+            <p className="text-sm">
+              Explore AIpro Editor's latest updates: New Label Window, Project
+              Label Preset, and the launch of Editor Premium to elevate your
+              video clipping and coding experience!
+            </p>
+          </div>
+        </div>
+        <div className=" shadow-md " style={{ height: "500px" }}>
+          <div className="relative w-full" style={{ height: "70%" }}>
+            <Image
+              src="/editor.png"
+              alt="upload"
+              className="object-cover"
+              layout="fill"
+            />
+          </div>
+          <div className="text-center mt-4">
+            <p className="text-2xl font-semibold text-blue-500" color="blue">
+              Introducing AIpro Editor
+            </p>
+            <p className="text-sm">
+              Explore AIpro Editor's latest updates: New Label Window, Project
+              Label Preset, and the launch of Editor Premium to elevate your
+              video clipping and coding experience!
+            </p>
+          </div>
+        </div>
+        <div className=" shadow-md " style={{ height: "500px" }}>
+          <div className="relative w-full" style={{ height: "70%" }}>
+            <Image
+              src="/editor.png"
+              alt="upload"
+              className="object-cover"
+              layout="fill"
+            />
+          </div>
+          <div className="text-center mt-4">
+            <p className="text-2xl font-semibold text-blue-500" color="blue">
+              Introducing AIpro Editor
+            </p>
+            <p className="text-sm">
+              Explore AIpro Editor's latest updates: New Label Window, Project
+              Label Preset, and the launch of Editor Premium to elevate your
+              video clipping and coding experience!
+            </p>
           </div>
         </div>
       </div>
