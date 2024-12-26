@@ -42,9 +42,7 @@ const Update = () => {
             AIpro’s Tactical Feed 
             </p>
             <p className="text-sm">
-              Explore AIpro Editor's latest updates: New Label Window, Project
-              Label Preset, and the launch of Editor Premium to elevate your
-              video clipping and coding experience!
+            See how we’ve imporved our automated tactical feed
             </p>
           </div>
         </div>
@@ -62,9 +60,7 @@ const Update = () => {
               Introducing AIpro Editor
             </p>
             <p className="text-sm">
-              Explore AIpro Editor's latest updates: New Label Window, Project
-              Label Preset, and the launch of Editor Premium to elevate your
-              video clipping and coding experience!
+            See how we’ve imporved our automated tactical feed
             </p>
           </div>
         </div>
