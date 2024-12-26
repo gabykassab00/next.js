@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
 import { reviewData } from "@/constants";
+import Image from "next/image";
 
 const Review = () => {
   return (
@@ -59,7 +60,13 @@ const Review = () => {
                         <FaStar className="md:w-6 md:h-6 w-3 text-yellow-600" />
                         <FaStar className="md:w-6 md:h-6 w-3 text-yellow-600" />
                       </div>
-                      
+                        {/* profile */}
+                        <div className="mt-10">
+                            <div className="flex items-center space-x-4">
+                                <Image src={data.image} width={60} height={60} alt="client" className="rounded-full"></Image>
+                                
+                            </div>
+                        </div>
                     </div>
                   </SwiperSlide>
                 );
