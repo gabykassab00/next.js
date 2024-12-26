@@ -52,8 +52,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="border bg-gray-20"/>
-        <p className="regular-14 w-full text-center text-gray-30">2025 AIPRO | all rights reserved</p>
+        <div className="border bg-gray-20" />
+        <p className="regular-14 w-full text-center text-gray-30">
+          2025 AIPRO | all rights reserved
+        </p>
       </div>
     </footer>
   );
