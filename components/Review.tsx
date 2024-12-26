@@ -1,6 +1,13 @@
 import React from 'react'
 import 'react-icons/fa'
 import { FaStar } from 'react-icons/fa'
+import {Swiper,SwiperSlide}  from 'swiper/react'
+import "swiper/css"
+import "swiper/css/effect-cards"
+import {EffectCards} from 'swiper/modules'
+
+
+
 const Review = () => {
   return (
     <div className='pt-20 pb-20 flex items-center justify-center flex-col bg-[#1976d2]'>
@@ -24,7 +31,12 @@ const Review = () => {
                 </div>
             </div>
         </div>
-        {/* */}
+        {/*slider */}
+        <div className='oveflow-hidden'>
+            <div>
+
+            </div>
+        </div>
       </div>
     </div>
   )
