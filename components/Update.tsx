@@ -31,7 +31,7 @@ const Update = () => {
         <div className=" shadow-md " style={{ height: "500px" }}>
           <div className="relative w-full" style={{ height: "70%" }}>
             <Image
-              src="/editor.png"
+              src="/tactics.jpg"
               alt="upload"
               className="object-cover"
               layout="fill"
