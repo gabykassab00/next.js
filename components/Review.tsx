@@ -7,6 +7,7 @@ import "swiper/css"
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
+import { reviewData } from '@/constants'
 
 
 const Review = () => {
@@ -40,7 +41,17 @@ const Review = () => {
                 grabCursor={true}
                 modules={[EffectCards]}
                 className='md:w-[450px] md:h-[350px] w-[90%] h-[300px]'
-                ></Swiper>
+                >
+                    {reviewData.map((data)=>{
+                        return(
+                            <SwiperSlide key={data.id} className='bg-white rounded-3xl block'>
+                                <div className='w-[80%] mx-auto mt-16'>
+                                    
+                                </div>
+                            </SwiperSlide>
+                        )
+                    })}
+                </Swiper>
             </div>
         </div>
       </div>
