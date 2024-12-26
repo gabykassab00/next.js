@@ -49,9 +49,9 @@ const Update = () => {
         <div className=" shadow-md " style={{ height: "500px" }}>
           <div className="relative w-full" style={{ height: "70%" }}>
             <Image
-              src="/editor.png"
+              src="/dev.png"
               alt="upload"
-              className="object-cover"
+              className=""
               layout="fill"
             />
           </div>
@@ -60,7 +60,7 @@ const Update = () => {
               Introducing AIpro Editor
             </p>
             <p className="text-sm">
-            See how we’ve imporved our automated tactical feed
+            How do we benefit from being able to develop using a server-less platform
             </p>
           </div>
         </div>
