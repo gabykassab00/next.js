@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { use, useState } from "react";
 import Button from "./Button";
 
-const Navbar = () => {
+const Navbar = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
   const [isMenuOpen,setIsMenuopen] = useState(false);
   const toggleMenu = () => {
     setIsMenuopen(!isMenuOpen);
@@ -31,6 +31,7 @@ const Navbar = () => {
         title="login"
         icon="/user.svg"
         variant="btn_blue"
+        onClick={handleshowlogin}
         ></Button>
       </div>
 
