@@ -73,6 +73,24 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                     Continue With Google
                 </button>
         </form>
+        <div className='mt-6 text-center text-sm text-slate-600'>
+            {signup ?(
+                <>
+                <p className='mb-3 mt-2 text-sm text-gray-500'>
+                    <a className='text-blue-800 hover:text-blue-600'>
+                        Reset your password
+                        </a>
+                </p>
+                Already have an account ?
+                <a className='font-medium text-[#4285f2]' onClick={(e)=>{stoppropagation(e);toggleform(false)}}>
+                    Log in
+                </a>
+                </>
+            ):(
+                <>
+                </>
+            )}
+        </div>
         </div>
       </div>
     </div>
