@@ -88,6 +88,10 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                 </>
             ):(
                 <>
+                Don't you have an account
+                <a className='font-medium text-[#4285f4]' onClick={(e)=>{stoppropagation(e);toggleform(true)}}>
+                    Sign up
+                </a>
                 </>
             )}
         </div>
