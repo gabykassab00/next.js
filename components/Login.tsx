@@ -37,8 +37,12 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
         </div>
 
         <div className='flex w-full items-center gap-2 py-6 text-sm text-slate-600'>
-            
+            <div className='h-px w-full bg-slate-200'>
+                Or
+            </div>
+            <div className='h-px w-full bg-slate-200'></div>
         </div>
+        
       </div>
     </div>
   )
