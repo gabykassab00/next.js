@@ -44,14 +44,14 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
         </div>
 
         <div className='flex w-full items-center gap-2 py-6 text-sm text-slate-600'>
-            <div className='h-px w-full bg-slate-200'>
+            <div className='h-px w-full bg-slate-200 text-right'>
                 Or
             </div>
             <div className='h-px w-full bg-slate-200'></div>
         </div>
 
         <form onSubmit={handlesubmit} className='w-full'>
-            <label htmlFor='email' className='sr-only'>Email Adress</label>
+            <label htmlFor='email' className='sr-only mt-2'>Email Adress</label>
             <input name='email' type='email' autoComplete='email' required className='block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-black focus:ring-offset-1' placeholder='Email Adress'/>
 
             <label htmlFor='password' className='sr-only'>Password</label>
