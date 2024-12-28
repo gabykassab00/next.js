@@ -42,7 +42,13 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
             </div>
             <div className='h-px w-full bg-slate-200'></div>
         </div>
-        
+
+        <form onSubmit={handlesubmit} className='w-full'>
+            <label htmlFor='email' className='sr-only'>Email Adress</label>
+            <input name='email' type='email' autoComplete='email' required className='block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-black focus:ring-offset-1' placeholder='Email Adress'/>
+
+            
+        </form>
       </div>
     </div>
   )
