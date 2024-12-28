@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useState } from 'react'
 
 const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
@@ -27,6 +28,12 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
           </svg>
         </button>
 
+        <div className='p-5'>
+        <div className='flex flex-row items-center justify-center gap-2'>
+            <Image src="/logo.png" width={100} height={100} alt='logo'/>
+            <h1 className='text-6xl font-semibold'>AIPRO</h1>
+        </div>
+
         <div className='text-center'>
             <p className='mb-3 text-2xl font-semibold leading-5 text-slate-900'>
                 {signup?'create your account':'login to your account'}
@@ -47,8 +54,10 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
             <label htmlFor='email' className='sr-only'>Email Adress</label>
             <input name='email' type='email' autoComplete='email' required className='block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-black focus:ring-offset-1' placeholder='Email Adress'/>
 
-            
+            <label htmlFor='password' className='sr-only'>Password</label>
+
         </form>
+        </div>
       </div>
     </div>
   )
