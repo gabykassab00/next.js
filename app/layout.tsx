@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { useState } from "react";
 
 export const metadata: Metadata = {
   title: "Aipro",
@@ -12,6 +13,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+      const [showlogin,setshowlogin] = useState(false);
+      const handleshowlogin = ()=>{
+        setshowlogin(!showlogin);
+      }
+
+
+
   return (
     <html lang="en">
       <body>
