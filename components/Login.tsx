@@ -5,7 +5,13 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
 
     const[signup,setsignup] = useState(false);
 
-    
+    const toggleform = (tosignup:boolean)=>{
+        setsignup(tosignup);
+    }
+
+    const stoppropagation = (e:React.MouseEvent)=>{
+        e.stopPropagation();
+    }
 
 
 
