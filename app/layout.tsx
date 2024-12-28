@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
+"use client";
+import Login from "@/components/Login";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { useState } from "react";
 
-export const metadata: Metadata = {
-  title: "Aipro",
-  description: "Ai Analyzer for footaball matches", 
-};
 
 export default function RootLayout({
   children,
@@ -24,9 +21,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar></Navbar>
+        <Navbar handleshowlogin={handleshowlogin}></Navbar>
         <main className="relative overflow-hidden">
         {children}
+        {showlogin && (
+          <div
+          className="fixed inset-0 z-50 flex justify-center items-center backdrop-blur-md backdrop-brightness-75"
+          onClick={handleshowlogin}
+          >
+            <Login handleshowlogin={handleshowlogin}/>
+          </div>
+        )}
         </main>
       </body>
     </html>
