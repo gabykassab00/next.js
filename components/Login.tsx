@@ -66,6 +66,12 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                 </>
             )}
 
+                <button type='submit' className='inline-flex w-full items-center justify-center rounded-lg bg-blue-600 p-2 py-3 text-sm font-medium text-white outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 disabled:bg-gray-400'>
+                    {signup?"sign up":"login"}
+                </button>
+                <button type='button' className='mt-2 inline-flex w-full items-center justify-center rounded-lg bg-red-600 p-2 py-3 text-sm font-medium text-white outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 disabled:bg-gray-400'>
+                    Continue With Google
+                </button>
         </form>
         </div>
       </div>
