@@ -13,6 +13,12 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
         e.stopPropagation();
     }
 
+    const handlesubmit = (e:React.FormEvent)=>{
+        e.preventDefault();
+        console.log(signup?"sign up success":"login success");
+    }
+    
+
 
 
 
