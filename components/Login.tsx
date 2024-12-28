@@ -56,7 +56,14 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
 
             <label htmlFor='password' className='sr-only'>Password</label>
             <input name='passowrd' type='password' autoComplete='current-password' required className='mt-2 block w-full rounded-lg border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1' placeholder='Password'/>
-            
+
+            {signup && (
+                <>
+                <label htmlFor='confirm-password' className='sr-only'>
+                    Confirm Password
+                </label>
+                </>
+            )}
 
         </form>
         </div>
