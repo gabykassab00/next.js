@@ -1,6 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Login = () => {
+const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
+
+
+    const[signup,setsignup] = useState(false);
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div>
       
