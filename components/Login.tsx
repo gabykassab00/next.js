@@ -31,6 +31,13 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
             <p className='mb-3 text-2xl font-semibold leading-5 text-slate-900'>
                 {signup?'create your account':'login to your account'}
             </p>
+            <p className='mt-2 text-sm leading-4 text-slate-600'>
+            {signup?'please fill in the details below to sign up':'you must be logged in to perform this action '}
+            </p>
+        </div>
+
+        <div className='flex w-full items-center gap-2 py-6 text-sm text-slate-600'>
+            
         </div>
       </div>
     </div>
