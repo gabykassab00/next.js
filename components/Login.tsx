@@ -32,6 +32,9 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                     password_confirm:confirmPassword
                 })
             })
+
+            const data = await response.json();
+            console.log(signup?"sign up success":"login success",data)
         }
     }
 
