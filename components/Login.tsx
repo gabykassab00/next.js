@@ -1,8 +1,11 @@
+import axios from 'axios';
 import Image from 'next/image';
-import React, { useState } from 'react'
+import React, { use, useState } from 'react'
 
 const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
-
+    const [email,setemail] =useState('');
+    const [password,setpassword] =useState('');
+    const [confirmPassword,setconfirmpassword] =useState('')
 
     const[signup,setsignup] = useState(false);
 
@@ -14,10 +17,13 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
         e.stopPropagation();
     }
 
-    const handlesubmit = (e:React.FormEvent)=>{
+    const handlesubmit = async (e:React.FormEvent)=>{
         e.preventDefault();
-        console.log(signup?"sign up success":"login success");
+
+            console.log(signup?"sign up success":"login success");
+
     }
+
 
   return (
     <div className='w-full h-full absolute top-0 backdrop-filter backdrop-brightness-75 backdrop-blur-md flex justify-center items-center'onClick={handleshowlogin}>
@@ -52,17 +58,17 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
 
         <form onSubmit={handlesubmit} className='w-full'>
             <label htmlFor='email' className='sr-only mt-2'>Email Adress</label>
-            <input name='email' type='email' autoComplete='email' required className='block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-black focus:ring-offset-1' placeholder='Email Adress'/>
+            <input name='email' type='email' autoComplete='email' required className='block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-black focus:ring-offset-1' placeholder='Email Adress' value={email} onChange={(e)=>setemail(e.target.value)}/>
 
             <label htmlFor='password' className='sr-only'>Password</label>
-            <input name='passowrd' type='password' autoComplete='current-password' required className='mt-2 block w-full rounded-lg border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1' placeholder='Password'/>
+            <input name='password' type='password' autoComplete='current-password' required className='mt-2 block w-full rounded-lg border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1' placeholder='Password' value={password} onChange={(e)=>setpassword(e.target.value)}/>
 
             {signup && (
                 <>
                 <label htmlFor='confirm-password' className='sr-only'>
                     Confirm Password
                 </label>
-                <input name='confirm-password' type='password' autoComplete='current-password' required className='mt-2 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1' placeholder='confirm password'/>
+                <input name='confirm-password' type='password' autoComplete='current-password' required className='mt-2 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1' placeholder='confirm password' value={confirmPassword} onChange={(e)=>setconfirmpassword(e.target.value)}/>
                 </>
             )}
 
