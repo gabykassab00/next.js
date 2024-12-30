@@ -20,6 +20,11 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
     const handlesubmit = async(e:React.FormEvent)=>{
         e.preventDefault()
 
+        if(password!==confirmPassword){
+            alert("passwords do not match");
+            return;
+        }
+
         try {
             const response = await fetch('http://localhost:8000/api/register',{
                 method:'POST',
