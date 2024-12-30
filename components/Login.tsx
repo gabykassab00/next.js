@@ -68,6 +68,8 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                     alert("login successfull");
                     console.log("login successfull",data)
                 }
+            }catch(error){
+                console.error("error during login",error)
             }
         }
 
