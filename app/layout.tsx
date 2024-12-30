@@ -3,7 +3,7 @@ import Login from "@/components/Login";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { useState } from "react";
-
+import { usePathname } from "next/navigation";
 
 export default function RootLayout({
   children,
@@ -16,7 +16,9 @@ export default function RootLayout({
         setshowlogin(!showlogin);
       }
 
+      const pathname = usePathname()
 
+      const shownavbar =pathname !=='/welcome'
 
   return (
     <html lang="en">
