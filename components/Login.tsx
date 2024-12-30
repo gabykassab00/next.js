@@ -17,34 +17,9 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
         e.stopPropagation();
     }
 
-    const handlesubmit = async(e:React.FormEvent)=>{
-        e.preventDefault()
-
-        if(password!==confirmPassword){
-            alert("passwords do not match");
-            return;
-        }
-
-        try {
-            const response = await fetch('http://localhost:8000/api/register',{
-                method:'POST',
-                headers:{
-                    'content-type':'application/json',
-                },
-                body:JSON.stringify({
-                    email,
-                    password,
-                    password_confirm:confirmPassword
-                })
-            })
-
-            const data = await response.json();
-            console.log(signup?"sign up success":"login success",data)
-        }catch(error){
-            console.error("error during form submission",error)
-        }
+    const handleregister = async(e:React.FormEvent)=>{
+        
     }
-
 
   return (
     <div className='w-full h-full absolute top-0 backdrop-filter backdrop-brightness-75 backdrop-blur-md flex justify-center items-center'onClick={handleshowlogin}>
@@ -77,7 +52,7 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
             <div className='h-px w-full bg-slate-200'></div>
         </div>
 
-        <form onSubmit={handlesubmit} className='w-full'>
+        <form onSubmit={handleSubmitForm} className='w-full'>
             <label htmlFor='email' className='sr-only mt-2'>Email Adress</label>
             <input name='email' type='email' autoComplete='email' required className='block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-black focus:ring-offset-1' placeholder='Email Adress' value={email} onChange={(e)=>setemail(e.target.value)}/>
 
