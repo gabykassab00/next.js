@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { sign } from 'crypto';
 import Image from 'next/image';
 import React, { use, useState } from 'react'
 
@@ -37,6 +38,11 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                     password_confirm:confirmPassword
                 })
             })
+            const data = await response.json()
+            if(response.ok){
+                alert(signup?"signup successful":"login successful")
+                console.log(signup?"sign up success":"login success",data)
+            }
         }
     }
 
