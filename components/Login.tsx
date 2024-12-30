@@ -17,11 +17,8 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
         e.stopPropagation();
     }
 
-    const handlesubmit = async (e:React.FormEvent)=>{
-        e.preventDefault();
-
-            console.log(signup?"sign up success":"login success");
-
+    const handlesubmit = async(e:React.FormEvent)=>{
+        e.preventDefault()
     }
 
 
