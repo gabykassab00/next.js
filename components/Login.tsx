@@ -18,7 +18,12 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
     }
 
     const handleregister = async(e:React.FormEvent)=>{
-        
+        e.preventDefault()
+
+        if(password!==confirmPassword){
+            alert("passwords do not match");
+            return;
+        }
     }
 
   return (
