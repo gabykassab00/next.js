@@ -2,6 +2,7 @@ import axios from 'axios';
 import { sign } from 'crypto';
 import Image from 'next/image';
 import React, { use, useState } from 'react'
+import { Router, useRouter } from 'next/router';
 
 const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
     const [email,setemail] =useState('');
@@ -9,7 +10,7 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
     const [confirmPassword,setconfirmpassword] =useState('')
 
     const[signup,setsignup] = useState(false);
-
+    const router = useRouter()
     const toggleform = (tosignup:boolean)=>{
         setsignup(tosignup);
     }
@@ -42,6 +43,7 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
             if(response.ok){
                 alert(signup?"signup successful":"login successful")
                 console.log(signup?"sign up success":"login success",data)
+                router.push('/welcome')
             }
         }catch(error){
             console.error("error during form submission",error)
