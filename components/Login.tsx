@@ -35,6 +35,8 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
 
             const data = await response.json();
             console.log(signup?"sign up success":"login success",data)
+        }catch(error){
+            console.error("error during form submission",error)
         }
     }
 
