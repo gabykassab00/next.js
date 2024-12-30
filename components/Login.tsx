@@ -19,6 +19,20 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
 
     const handlesubmit = async(e:React.FormEvent)=>{
         e.preventDefault()
+
+        try {
+            const response = await fetch('http://localhost:8000/api/register',{
+                method:'POST',
+                headers:{
+                    'content-type':'application/json',
+                },
+                body:JSON.stringify({
+                    email,
+                    password,
+                    password_confirm:confirmPassword
+                })
+            })
+        }
     }
 
 
