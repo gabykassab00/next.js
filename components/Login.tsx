@@ -43,8 +43,11 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                 alert(signup?"signup successful":"login successful")
                 console.log(signup?"sign up success":"login success",data)
             }
+        }catch(error){
+            console.error("error during form submission",error)
         }
     }
+    
 
   return (
     <div className='w-full h-full absolute top-0 backdrop-filter backdrop-brightness-75 backdrop-blur-md flex justify-center items-center'onClick={handleshowlogin}>
