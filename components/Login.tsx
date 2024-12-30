@@ -50,7 +50,19 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
 
 
         const handlelogin = async(e:React.FormEvent)=>{
-            
+            e.preventDefault();
+            try{
+                const response = await fetch('http://localhost:8000/api/login',{
+                    method:"POST",
+                    headers:{
+                        "content-type":"application/json",
+                    },
+                    body:JSON.stringify({
+                        email,
+                        password
+                    })
+                })
+            }
         }
 
 
