@@ -62,6 +62,12 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                         password
                     })
                 })
+
+                const data = await response.json();
+                if(response.ok){
+                    alert("login successfull");
+                    console.log("login successfull",data)
+                }
             }
         }
 
