@@ -73,6 +73,13 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
             }
         }
 
+        const handleSubmitForm = (e:React.FormEvent)=>{
+            if(signup){
+                handleregister(e);
+            }else {
+                handlelogin(e)
+            }
+        }
 
 
   return (
