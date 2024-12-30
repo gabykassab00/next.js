@@ -24,6 +24,20 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
             alert("passwords do not match");
             return;
         }
+
+        try {
+            const response = await fetch('http://localhost:8000/api/register',{
+                method:"POST",
+                headers:{
+                    "content-type":"application/json",
+                },
+                body:JSON.stringify({
+                    email,
+                    password,
+                    password_confirm:confirmPassword
+                })
+            })
+        }
     }
 
   return (
