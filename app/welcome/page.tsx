@@ -25,6 +25,10 @@ const Page = () => {
             }else {
               throw new Error("not authenticated");
             }
+
+        }catch(error){
+          setauthenticated(false);
+          router.push("/")
         }
       }
     })
