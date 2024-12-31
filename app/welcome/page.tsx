@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; 
-
+import Button from "@/components/Button";
 const WelcomePage = () => {
   const [authenticated, setAuthenticated] = useState(false);
   const router = useRouter();
@@ -34,6 +34,10 @@ const WelcomePage = () => {
     checkAuthentication();
   }, [router]);
 
+  const handlelogout = async()=>{
+    
+  }
+
   if (!authenticated) {
     return <div>Loading...</div>; 
   }
@@ -41,6 +45,7 @@ const WelcomePage = () => {
   return (
     <div>
       <h1>Welcome, Authenticated User!</h1>
+      <button style={{backgroundColor:"#ff4d4d",}} >log out</button>
     </div>
   );
 };
