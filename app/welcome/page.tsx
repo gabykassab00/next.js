@@ -1,48 +1,49 @@
 "use client";
-import {  useRouter} from 'next/navigation';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation"; 
 
-const Page = () => {
-  const[authenticated,setauthenticated] = useState(false);
+const WelcomePage = () => {
+  const [authenticated, setAuthenticated] = useState(false);
   const router = useRouter();
 
-    useEffect(()=>{
-      const authentication = async ()=>{
-        try {
-          const token = localStorage.getItem("acess_token");
-          if(!token) throw new Error("token not found");
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      try {
+        const token = localStorage.getItem("access_token");
+        if (!token) throw new Error("Token not found");
 
-          const response = await fetch("http://localhost:8000/api/user",{
-            method:"GET",
-            headers:{
-              Authorization: `Bearer ${token}`
-            }
-          })
+        const response = await fetch("http://localhost:8000/api/user", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
-            if(response.ok){
-              const data = await response.json()
-              setauthenticated(true);
-            }else {
-              throw new Error("not authenticated");
-            }
-
-        }catch(error){
-          setauthenticated(false);
-          router.push("/")
+        if (response.ok) {
+          const data = await response.json();
+          setAuthenticated(true); 
+        } else {
+          throw new Error("Not authenticated");
         }
+      } catch (error) {
+        setAuthenticated(false);
+        router.push("/"); 
       }
-      authentication();
-    },[router]);
+    };
 
-    if(!authenticated){
-      return <div>loading ...</div>
-    }
+    checkAuthentication();
+  }, [router]);
+
+  if (!authenticated) {
+    return <div>Loading...</div>; 
+  }
 
   return (
     <div>
-      <h1>welcom , authenticated user</h1>
+      <h1>Welcome, Authenticated User!</h1>
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default WelcomePage;
+
