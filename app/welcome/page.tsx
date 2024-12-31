@@ -35,7 +35,26 @@ const WelcomePage = () => {
   }, [router]);
 
   const handlelogout = async()=>{
-    
+    try {
+      const response = await fetch("http://localhost:8000/api/logout",{
+        method:"POST",
+        headers:{
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          "content-type":"application/json"
+        }
+      })
+
+      if(response.ok){
+        localStorage.removeItem("access_token");
+        router.push("/");
+      }
+        else {
+          throw new Error("logout failed");
+        }
+    }catch(error){
+      console.error("error during logout",error);
+      alert("an error occured while logging out")
+    }
   }
 
   if (!authenticated) {
@@ -45,7 +64,7 @@ const WelcomePage = () => {
   return (
     <div>
       <h1>Welcome, Authenticated User!</h1>
-      <button style={{backgroundColor:"#ff4d4d",}} >log out</button>
+      <button style={{backgroundColor:"#ff4d4d",}} onClick={handlelogout}>log out</button>
     </div>
   );
 };
