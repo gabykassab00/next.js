@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar handleshowlogin={handleshowlogin}></Navbar>
+       {shownavbar && < Navbar handleshowlogin={handleshowlogin}></Navbar>}
         <main className="relative overflow-hidden">
         {children}
         {showlogin && (
