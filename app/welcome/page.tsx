@@ -11,6 +11,14 @@ const Page = () => {
         try {
           const token = localStorage.getItem("acess_token");
           if(!token) throw new Error("token not found");
+
+          const response = await fetch("http://localhost:8000/api/user",{
+            method:"GET",
+            headers:{
+              Authorization: `Bearer ${token}`
+            }
+          })
+          
         }
       }
     })
