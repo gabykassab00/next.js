@@ -9,7 +9,8 @@ const Page = () => {
     useEffect(()=>{
       const authentication = async ()=>{
         try {
-          
+          const token = localStorage.getItem("acess_token");
+          if(!token) throw new Error("token not found");
         }
       }
     })
