@@ -69,7 +69,7 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                         localStorage.setItem("access_token",data.token)
                         
                         if(data.refresh_token){
-                            document.cookie=`refresh_token=${data.refresh_token}; HttpOnly; Secure`;
+                            document.cookie = `refresh_token=${data.refresh_token}; HttpOnly; Secure`;
                         }
 
                         alert("login successfull");
