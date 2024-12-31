@@ -40,7 +40,7 @@ const Page = () => {
 
   return (
     <div>
-      
+      <h1>welcom , authenticated user</h1>
     </div>
   )
 }
