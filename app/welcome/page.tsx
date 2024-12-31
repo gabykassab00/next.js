@@ -18,7 +18,13 @@ const Page = () => {
               Authorization: `Bearer ${token}`
             }
           })
-          
+
+            if(response.ok){
+              const data = await response.json()
+              setauthenticated(true);
+            }else {
+              throw new Error("not authenticated");
+            }
         }
       }
     })
