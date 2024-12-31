@@ -31,7 +31,12 @@ const Page = () => {
           router.push("/")
         }
       }
-    })
+      authentication();
+    },[router]);
+
+    if(!authenticated){
+      return <div>loading ...</div>
+    }
 
   return (
     <div>
