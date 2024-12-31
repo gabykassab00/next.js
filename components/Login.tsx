@@ -64,9 +64,12 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
 
                 const data = await response.json();
                 if(response.ok){
-                    alert("login successfull");
-                    console.log("login successfull",data)
-                    window.location.href = '/welcome'
+                    if(data.token){
+                        localStorage.setItem("access_token",data.token)
+                        alert("login successfull");
+                        console.log("login successfull",data)
+                        window.location.href = '/welcome'
+                    }
                 }
             }catch(error){
                 console.error("error during login",error)
