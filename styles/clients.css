@@ -33,3 +33,7 @@
     max-width: 60%;
     z-index: 20;
 }
+
+.clients-header{
+    position: relative;
+}
