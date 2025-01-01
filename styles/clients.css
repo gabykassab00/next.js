@@ -1,0 +1,8 @@
+.clients-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    background: url("/feature-bg.jpg") no-repeat center ;
+    padding: 6rem 0;
+}
