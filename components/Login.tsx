@@ -2,12 +2,13 @@ import Image from 'next/image';
 import React, {  useState } from 'react'
 import {GoogleLogin,GoogleOAuthProvider} from '@react-oauth/google'
 import { on } from 'events';
+import { useRouter } from 'next/navigation';
 const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
     const [email,setemail] =useState('');
     const [password,setpassword] =useState('');
     const [confirmPassword,setconfirmpassword] =useState('')
-
     const[signup,setsignup] = useState(false);
+    const router = useRouter();
 
     
     const toggleform = (tosignup:boolean)=>{
@@ -83,17 +84,26 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
             }
         }
 
-
-
-          
-
-
-
         const handleSubmitForm = (e:React.FormEvent)=>{
             if(signup){
                 handleregister(e);
             }else {
                 handlelogin(e)
+            }
+        }
+
+
+        const onSucess = async(Credentialresponse:any)=>{
+            try {
+                const response = await fetch("http://localhost:8000/api/google",{
+                    method:"POST",
+                    headers:{
+                        "content-type":"application/json",
+                    },
+                    body:JSON.stringify({
+                        token:Credentialresponse.credential
+                    })
+                })
             }
         }
 
