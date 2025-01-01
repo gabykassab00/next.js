@@ -25,3 +25,11 @@
     width: auto;
     height: 100%;
 }
+
+.clients-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 60%;
+    z-index: 20;
+}
