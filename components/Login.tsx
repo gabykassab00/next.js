@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React, {  useState } from 'react'
-
+import {GoogleLogin,GoogleOAuthProvider} from '@react-oauth/google'
 const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
     const [email,setemail] =useState('');
     const [password,setpassword] =useState('');
@@ -144,9 +144,15 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                 <button type='submit' className='inline-flex w-full items-center justify-center rounded-lg bg-blue-600 p-2 py-3 text-sm font-medium text-white outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 disabled:bg-gray-400'>
                     {signup?"sign up":"login"}
                 </button>
-                <button type='button' className='mt-2 inline-flex w-full items-center justify-center rounded-lg bg-red-600 p-2 py-3 text-sm font-medium text-white outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 disabled:bg-gray-400'>
+                {/* <button type='button' className='mt-2 inline-flex w-full items-center justify-center rounded-lg bg-red-600 p-2 py-3 text-sm font-medium text-white outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 disabled:bg-gray-400'>
                     Continue With Google
-                </button>
+                </button> */}
+                <GoogleOAuthProvider clientId='429897524558-b5k6c8ppsg45su3vf92fllnfpu6q49ui.apps.googleusercontent.com'>
+                    <div>
+                        
+                    </div>
+                </GoogleOAuthProvider>
+                
         </form>
         <div className='mt-6 text-center text-sm text-slate-600'>
             {signup ?(
