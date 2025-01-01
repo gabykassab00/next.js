@@ -37,3 +37,10 @@
 .clients-header{
     position: relative;
 }
+
+.clients-logo{
+    position: absolute;
+    left: -5px;
+    top: -28px;
+    width: 50px;
+}
