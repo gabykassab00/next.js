@@ -111,8 +111,11 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                 }else {
                     console.error("bakcend error",await response.text())
                 }
+            }catch(error){
+                console.error("error during google login",error)
             }
         }
+        
 
 
   return (
