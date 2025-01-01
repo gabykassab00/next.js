@@ -115,7 +115,10 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                 console.error("error during google login",error)
             }
         }
-        
+
+        const onError = ()=>{
+            console.log("login failed")
+        }
 
 
   return (
