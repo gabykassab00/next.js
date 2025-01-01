@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; 
-import Button from "@/components/Button";
 const WelcomePage = () => {
   const [authenticated, setAuthenticated] = useState(false);
   const router = useRouter();

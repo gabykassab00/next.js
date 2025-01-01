@@ -122,9 +122,6 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
         </div>
 
         <div className='flex w-full items-center gap-2 py-6 text-sm text-slate-600'>
-            <div className='h-px w-full bg-slate-200 text-right'>
-                Or
-            </div>
             <div className='h-px w-full bg-slate-200'></div>
         </div>
 
@@ -154,22 +151,24 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
         <div className='mt-6 text-center text-sm text-slate-600'>
             {signup ?(
                 <>
-                <p className='mb-3 mt-2 text-sm text-gray-500'>
-                    <a className='text-blue-800 hover:text-blue-600'>
-                        Reset your password
-                        </a>
-                </p>
                 Already have an account ?
                 <a className='font-medium text-[#4285f2]' onClick={(e)=>{stoppropagation(e);toggleform(false)}}>
                     Log in
                 </a>
                 </>
             ):(
+                
                 <>
+                <p className='mb-3 mt-2 text-sm text-gray-500'>
+                    <a className='text-blue-800 hover:text-blue-600'>
+                        Reset your password
+                        </a>
+                </p>
                 Don't you have an account
                 <a className='font-medium text-[#4285f4]' onClick={(e)=>{stoppropagation(e);toggleform(true)}}>
                     Sign up
                 </a>
+                
                 </>
             )}
         </div>
