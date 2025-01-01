@@ -108,8 +108,9 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                     const data = await response.json();
                     console.log("bakend response",data);
                     router.push('/welcome');
+                }else {
+                    console.error("bakcend error",await response.text())
                 }
-                
             }
         }
 
