@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import React, {  useState } from 'react'
 import {GoogleLogin,GoogleOAuthProvider} from '@react-oauth/google'
-import { on } from 'events';
 import { useRouter } from 'next/navigation';
 const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
     const [email,setemail] =useState('');
@@ -107,7 +106,13 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                 if(response.ok){
                     const data = await response.json();
                     console.log("bakend response",data);
+
+                if(data.token){
+                    localStorage.setItem("acces_token",data.token);
                     router.push('/welcome');
+                }else{
+                    console.error("token missing");
+                }
                 }else {
                     console.error("bakcend error",await response.text())
                 }
@@ -115,6 +120,9 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                 console.error("error during google login",error)
             }
         }
+
+        
+          
 
         const onError = ()=>{
             console.log("login failed")
@@ -168,10 +176,9 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                 <button type='submit' className='inline-flex w-full items-center justify-center rounded-lg bg-blue-600 p-2 py-3 text-sm font-medium text-white outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 disabled:bg-gray-400'>
                     {signup?"sign up":"login"}
                 </button>
-                <GoogleOAuthProvider clientId='429897524558-b5k6c8ppsg45su3vf92fllnfpu6q49ui.apps.googleusercontent.com'>
-                    <div>
-                    <h1>google login</h1>
-                    <GoogleLogin onSuccess={onSucess} onError={onError}/>
+                <GoogleOAuthProvider  clientId='429897524558-b5k6c8ppsg45su3vf92fllnfpu6q49ui.apps.googleusercontent.com'>
+                    <div className='mt-2'>
+                    <GoogleLogin onSuccess={onSucess} onError={onError} />
                     </div>
                 </GoogleOAuthProvider>
                 
