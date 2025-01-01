@@ -6,3 +6,12 @@
     background: url("/feature-bg.jpg") no-repeat center ;
     padding: 6rem 0;
 }
+
+.clients-container{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2rem;
+    position: relative;
+}
