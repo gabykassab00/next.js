@@ -104,6 +104,12 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                         token:Credentialresponse.credential
                     })
                 })
+                if(response.ok){
+                    const data = await response.json();
+                    console.log("bakend response",data);
+                    router.push('/welcome');
+                }
+                
             }
         }
 
