@@ -108,7 +108,7 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                     console.log("bakend response",data);
 
                 if(data.token){
-                    localStorage.setItem("acces_token",data.token);
+                    localStorage.setItem("access_token",data.token);
                     router.push('/welcome');
                 }else{
                     console.error("token missing");
