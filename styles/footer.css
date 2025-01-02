@@ -33,3 +33,7 @@
 .footer-contact{
     @apply flex flex-col gap-5;
 }
+
+.footer-contact-title{
+    @apply flex gap-4 md:flex-col lg:flex-row;
+}
