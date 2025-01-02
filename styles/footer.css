@@ -34,6 +34,12 @@
     @apply flex flex-col gap-5;
 }
 
-.footer-contact-title{
+.footer-contact-link{
     @apply flex gap-4 md:flex-col lg:flex-row;
 }
+
+.footer-contact-label{
+    @apply whitespace-nowrap;
+}
+
+
