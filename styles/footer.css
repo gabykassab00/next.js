@@ -9,3 +9,7 @@
 .footer-top{
     @apply flex flex-col items-start justify-center gap-[10%] md:flex-row;
 }
+
+.footer-logo{
+    @apply mb-10;
+}
