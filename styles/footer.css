@@ -42,4 +42,7 @@
     @apply whitespace-nowrap;
 }
 
+.footer-contact-value{
+    @apply medium-14 whitespace-nowrap text-blue-70;
+}
 
