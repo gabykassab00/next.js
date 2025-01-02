@@ -21,3 +21,7 @@
 .footer-column{
     @apply flex flex-col gap-5;
 }
+
+.footer-column-title{
+    @apply bold-18 whitespace-nowrap;
+}
