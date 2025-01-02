@@ -46,3 +46,7 @@
     @apply medium-14 whitespace-nowrap text-blue-70;
 }
 
+.footer-socials{
+    @apply flex flex-col gap-5;
+}
+
