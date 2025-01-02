@@ -13,3 +13,7 @@
 .footer-logo{
     @apply mb-10;
 }
+
+.footer-links{
+    @apply flex flex-wrap gap-10 sm:justify-between md:flex-1;
+}
