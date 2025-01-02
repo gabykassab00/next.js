@@ -50,3 +50,6 @@
     @apply flex flex-col gap-5;
 }
 
+.footer-socials-link{
+    @apply text-gray-30;
+}
