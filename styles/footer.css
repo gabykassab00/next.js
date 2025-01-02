@@ -53,3 +53,8 @@
 .footer-socials-link{
     @apply text-gray-30;
 }
+
+.footer-divider{
+    @apply border bg-gray-20;
+}
+
