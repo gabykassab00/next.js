@@ -25,3 +25,7 @@
 .footer-column-title{
     @apply bold-18 whitespace-nowrap;
 }
+
+.footer-link{
+    @apply text-gray-300;
+}
