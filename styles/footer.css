@@ -1,3 +1,11 @@
 .footer{
     @apply flexCenter mb-24;
 }
+
+.footer-container{
+    @apply padding-container max-container flex w-full flex-col gap-14;
+}
+
+.footer-top{
+    @apply flex flex-col items-start justify-center gap-[10%] md:flex-row;
+}
