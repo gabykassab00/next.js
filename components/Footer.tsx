@@ -7,43 +7,43 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
-          <Link href="/" className="mb-10">
+        <div className="footer-top">
+          <Link href="/" className="footer-logo">
             <Image src="/logo.png" alt="logo" width={74} height={29} />
           </Link>
-          <div className="flex flex-wrap gap-10 sm:justify-between md:flex-1">
+          <div className="footer-links">
             {FOOTER_LINKS.map((columns) => (
               <Footercolumn title={columns.title}>
-                <ul className="regular-14 flex flex-col gap-4 text-gray-30">
+                <ul className="footer-column-list">
                   {columns.links.map((link) => (
-                    <Link href="/" key={link}>
+                    <Link href="/" key={link} className="footer-link">
                       {link}
                     </Link>
                   ))}
                 </ul>
               </Footercolumn>
             ))}
-            <div className="flex flex-col gap-5">
+            <div className="footer-contact">
               <Footercolumn title={FOOTER_CONTACT_INFO.title}>
                 {FOOTER_CONTACT_INFO.links.map((link) => (
                   <Link
                     href="/"
                     key={link.label}
-                    className="flex gap-4 md:flex-col lg:flex-row"
+                    className="footer-contact-link"
                   >
-                    <p className="whitespace-nowrap">{link.label}:</p>
-                    <p className="medium-14 whitespace-nowrap text-blue-70">
+                    <p className="footer-contact-label">{link.label}:</p>
+                    <p className="footer-contact-value">
                       {link.value}
                     </p>
                   </Link>
                 ))}
               </Footercolumn>
             </div>
-            <div className="flex flex-col gap-5">
+            <div className="footer-socials">
               <Footercolumn title={SOCIALS.title}>
-                <ul className="regular-14 flex gap-4 text-gray-30">
+                <ul className="footer-socials-list">
                   {SOCIALS.links.map((link) => (
-                    <Link href="/" key={link}>
+                    <Link href="/" key={link} className="footer-social-link">
                       <Image src={link} alt="logo" width={24} height={24} />
                     </Link>
                   ))}
@@ -52,8 +52,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="border bg-gray-20" />
-        <p className="regular-14 w-full text-center text-gray-30">
+        <div className="footer-divider" />
+        <p className="footer-bottom-text">
           2025 AIPRO | all rights reserved
         </p>
       </div>
@@ -68,8 +68,8 @@ type Footercolumnprops = {
 
 const Footercolumn = ({ title, children }: Footercolumnprops) => {
   return (
-    <div className="flex flex-col gap-5">
-      <h4 className="bold-18 whitespace-nowrap">{title}</h4>
+    <div className="footer-column">
+      <h4 className="footer-column-title">{title}</h4>
       {children}
     </div>
   );
