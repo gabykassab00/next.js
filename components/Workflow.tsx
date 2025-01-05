@@ -4,16 +4,16 @@ import React from "react";
 const Workflow = () => {
   return (
     <div>
-      <h4 className="uppercase font-semibold text-center mb-1 text-red-700-xl">
+      <h4 className="uppercase font-semibold text-center mb-1 text-red-700-xl mt-10">
         {`Cameras,Analysis Software and Data for sport`}
       </h4>
-      <h2 className="text-center font-semibold text-5xl mt-5">
+      <h2 className="text-center font-semibold text-4xl mt-5">
         Designed to improve any team’s workflow
       </h2>
       <div className="grid grid-cols-4 gap-5 mt-10 ">
         <div
           className="flex shadow-md h-96  flex-col0"
-          style={{ height: "500px" }}
+          style={{ height: "500px",width:"250px",marginLeft:"auto" }}
         >
           <div className="relative w-full ">
             <Image
@@ -36,7 +36,7 @@ const Workflow = () => {
         </div>
         <div
           className="flex shadow-md h-96  flex-col0"
-          style={{ height: "500px" }}
+          style={{ height: "500px",width:"250px",marginLeft:"30px" }}
         >
           <div className="relative w-full h-full">
             <Image
@@ -59,7 +59,7 @@ const Workflow = () => {
         </div>
         <div
           className="flex shadow-md h-96  flex-col0"
-          style={{ height: "500px" }}
+          style={{ height: "500px",width:"250px" }}
         >
           <div className="relative w-full h-full">
             <Image
@@ -82,7 +82,7 @@ const Workflow = () => {
         </div>
         <div
           className="flex shadow-md h-96  flex-col0"
-          style={{ height: "500px" }}
+          style={{ height: "500px",width:"250px",marginLeft:"-25px" }}
         >
           <div className="relative w-full h-full">
             <Image

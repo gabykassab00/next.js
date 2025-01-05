@@ -28,7 +28,7 @@ const Navbar = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
       <div className="lg:flexCenter  hidden">
         <Button
         type="button"
-        title="login"
+        title="Login"
         icon="/user.svg"
         variant="btn_blue"
         onClick={handleshowlogin}

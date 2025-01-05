@@ -4,7 +4,7 @@ import React from "react";
 const Update = () => {
   return (
     <div>
-      <h2 className="text-center font-semibold text-5xl mt-5">
+      <h2 className="text-center font-semibold text-4xl mt-20">
         Our Latest News & Updates
       </h2>
       <div className="grid grid-cols-3 gap-5 mt-10">
@@ -17,7 +17,7 @@ const Update = () => {
               layout="fill"
             />
           </div>
-          <div className="text-center mt-4">
+          <div className="text-left mt-4">
             <p className="text-2xl font-semibold text-blue-500" color="blue">
               Introducing AIpro Editor
             </p>
@@ -37,7 +37,7 @@ const Update = () => {
               layout="fill"
             />
           </div>
-          <div className="text-center mt-4">
+          <div className="text-left mt-4">
             <p className="text-2xl font-semibold text-blue-500" color="blue">
             AIpro’s Tactical Feed 
             </p>
@@ -55,7 +55,7 @@ const Update = () => {
               layout="fill"
             />
           </div>
-          <div className="text-center mt-4">
+          <div className="text-left mt-4">
             <p className="text-2xl font-semibold text-blue-500" color="blue">
               Introducing AIpro Editor
             </p>
