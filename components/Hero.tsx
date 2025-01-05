@@ -13,18 +13,18 @@ const Hero = () => {
           alt="football"
           width={50}
           height={50}
-          className="absolute left-[-5px] top-[-30px] w-10 lg:w-[50px]"
+          className="absolute left-[+30px] top-[-30px] w-10 lg:w-[30px] mt-3"
         />
-        <h1 className="bold-52 lg:bold-88 text-blue">AIPRO,<br></br>OFFICIALLY RELEASED</h1>
-        <h2>THE SMARTEST AI ANALYZER</h2>
+        <h1 className="bold-52 lg:bold-80 text-blue">AIPRO,<br></br>OFFICIALLY RELEASED</h1>
+        <h2 className="bold-20">THE SMARTEST AI ANALYZER</h2>
         <p className="regular-16 mt-6 text-gray-30 xl:max-w-[520px] ">
         The smartest Ai Analyzer and chosen by many top professional clubs to capture,
         review,share and analyze your games & training sessions
         </p>
-        <div className="flex w-full gap-3 sm:flex-row">
+        <div className="flex w-full gap-3 sm:flex-row mt-2">
             <Button
             type="button"
-            title = 'try software'
+            title = 'Try Software'
             variant="btn_blue"
             ></Button>
 
