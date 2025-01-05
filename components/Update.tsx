@@ -8,8 +8,8 @@ const Update = () => {
         Our Latest News & Updates
       </h2>
       <div className="grid grid-cols-3 gap-5 mt-10">
-        <div className=" shadow-md " style={{ height: "500px" }}>
-          <div className="relative w-full" style={{ height: "70%" }}>
+        <div className=" shadow-md " style={{ height: "500px",width:"400px" ,marginLeft:"5px" }}>
+          <div className="relative w-full" style={{ height: "70%",width:"400px"  }}>
             <Image
               src="/editor.png"
               alt="upload"
@@ -29,7 +29,7 @@ const Update = () => {
           </div>
         </div>
         <div className=" shadow-md " style={{ height: "500px" }}>
-          <div className="relative w-full" style={{ height: "70%" }}>
+          <div className="relative w-full" style={{ height: "70%",width:"400px"  }}>
             <Image
               src="/tactics.jpg"
               alt="upload"
@@ -47,7 +47,7 @@ const Update = () => {
           </div>
         </div>
         <div className=" shadow-md " style={{ height: "500px" }}>
-          <div className="relative w-full" style={{ height: "70%" }}>
+          <div className="relative w-full" style={{ height: "70%",width:"400px" }}>
             <Image
               src="/dev.png"
               alt="upload"
