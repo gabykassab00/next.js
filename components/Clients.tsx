@@ -10,20 +10,13 @@ const Clients = () => {
           <Image
             src="/clients.png"
             alt="clients page image"
-            width={440}
-            height={1000}
+            width={240}
+            height={50}
             className="clients-phone"
           ></Image>
         </div>
         <div className="clients-content">
             <div className="clients-header">
-                <Image 
-                src="/hero-logo.png"
-                alt="clients page image"
-                width={50}
-                height={50}
-                className="clients-logo "
-                ></Image>
                 <h2 className="clients-title">Our Clients</h2>
             </div>
             <ul className="clients-features-list ">
@@ -31,7 +24,6 @@ const Clients = () => {
                     <FeatureItem 
                     key={feature.title}
                     title={feature.title} 
-                    icon={feature.icon}
                     description={feature.description}
                     />
                 ))}
@@ -44,15 +36,13 @@ const Clients = () => {
 
 type featureItem = {
     title: string;
-    icon: string;
     description: string;
 }
 
-const FeatureItem =({title,icon,description}:featureItem)=>{
+const FeatureItem =({title,description}:featureItem)=>{
     return (
     <li className="flex w-full flex-1 flex-col items-start">
         <div className="rounded-full p-4 lg:p-7">
-            <Image src={icon} alt="map" width={28} height={28}/>
         </div>
         <h2 className="bold-20 lg:bold-32 mt-5 capitalize">
             {title}
