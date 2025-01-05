@@ -139,17 +139,17 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
         </button>
 
         <div className='p-5'>
-        <div className='flex flex-row items-center justify-center gap-2'>
-            <Image src="/logo.png" width={100} height={100} alt='logo'/>
-            <h1 className='text-6xl font-semibold'>AIPRO</h1>
+        <div className='flex flex-row items-center justify-center gap-2  mr-20'>
+            <Image src="/logo.png" width={90} height={90} alt='logo' />
+            <h1 className='text-3xl text-center justify-center font-semibold'>AIPRO</h1>
         </div>
 
         <div className='text-center'>
-            <p className='mb-3 text-2xl font-semibold leading-5 text-slate-900'>
-                {signup?'create your account':'login to your account'}
+            <p className='mb-3 text-xl font-semibold leading-5 text-slate-900'>
+                {signup?'Create your account':'Login to your account'}
             </p>
             <p className='mt-2 text-sm leading-4 text-slate-600'>
-            {signup?'please fill in the details below to sign up':'you must be logged in to perform this action '}
+            {signup?'Please fill in the details below to sign up':'You must be logged in to perform this action '}
             </p>
         </div>
 
@@ -174,7 +174,7 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
             )}
 
                 <button type='submit' className='inline-flex w-full items-center justify-center rounded-lg bg-blue-600 p-2 py-3 text-sm font-medium text-white outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 disabled:bg-gray-400'>
-                    {signup?"sign up":"login"}
+                    {signup?"Sign Up":"Login"}
                 </button>
                 <GoogleOAuthProvider  clientId='429897524558-b5k6c8ppsg45su3vf92fllnfpu6q49ui.apps.googleusercontent.com'>
                     <div className='mt-2'>
@@ -201,7 +201,7 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                 </p>
                 Don't you have an account
                 <a className='font-medium text-[#4285f4]' onClick={(e)=>{stoppropagation(e);toggleform(true)}}>
-                    Sign up
+                   <br></br> Sign up
                 </a>
                 
                 </>
