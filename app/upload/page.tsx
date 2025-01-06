@@ -14,6 +14,7 @@ const Upload = () => {
             <button onClick={} className='bg-blue-500 text-white py-2 px-4 rounded w-full hover:bg-blue-600'>
                 Upload
             </button>
+            {status && <p className='mt-4 text-sm'>{status}</p>}
         </div>
       
     </div>
