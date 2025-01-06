@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import path from "path";
 
 export default function RootLayout({
   children,
@@ -18,7 +19,7 @@ export default function RootLayout({
 
       const pathname = usePathname()
 
-      const shownavbar =pathname !=='/welcome'
+      const shownavbar =pathname !=='/welcome' && pathname !== '/upload';
 
   return (
     <html lang="en">
