@@ -1,6 +1,14 @@
-import React from 'react'
+import React, {  useState } from 'react'
+
 
 const Upload = () => {
+    const [file,setfile] = useState(null);
+    const [status,setstatus] = useState('')
+
+
+
+
+
   return (
     <div className='min-h-screen flex items-center justify-center bg-gray-100'>
         <div className='bg-white p-6 rounded shadow w-80'>
