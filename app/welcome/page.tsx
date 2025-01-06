@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 const WelcomePage = () => {
   const [authenticated, setAuthenticated] = useState(false);
+  const [file,setfile] = useState(null)
   const router = useRouter();
 
   useEffect(() => {
@@ -60,6 +61,11 @@ const WelcomePage = () => {
   if (!authenticated) {
     return <div>Loading...</div>; 
   }
+
+  const onfilechange=(e:any)=>{
+    setfile(e.target.files[0]);
+  }
+
 
   return (
     <>
