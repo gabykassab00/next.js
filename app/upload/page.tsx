@@ -15,6 +15,10 @@ const Upload = () => {
             alert('please select a file first');
             return;
         }
+
+        const formdata = new FormData();
+        formdata.append('file',file)
+
     }
 
 
