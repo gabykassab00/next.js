@@ -5,7 +5,9 @@ const Upload = () => {
     const [file,setfile] = useState(null);
     const [status,setstatus] = useState('')
 
+    const onfilechange = (e:any)=>{
 
+    }
 
 
 
@@ -17,7 +19,7 @@ const Upload = () => {
             </h1>
             <input 
             type='file'
-            onChange={}
+            onChange={onfilechange}
             className='border p-2 mb-4 w-full'/>
             <button onClick={} className='bg-blue-500 text-white py-2 px-4 rounded w-full hover:bg-blue-600'>
                 Upload
