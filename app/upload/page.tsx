@@ -31,7 +31,9 @@ const Upload = () => {
         if (response.ok){
             setstatus(result.message || 'file uploaded successfully');
         }
-
+        else {
+            setstatus(result.message || 'error during file upload');
+        }
     }
 
 
