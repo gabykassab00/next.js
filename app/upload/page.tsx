@@ -28,6 +28,10 @@ const Upload = () => {
         })
         const result = await response.json();
 
+        if (response.ok){
+            setstatus(result.message || 'file uploaded successfully');
+        }
+
     }
 
 
