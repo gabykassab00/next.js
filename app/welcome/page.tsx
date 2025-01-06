@@ -67,7 +67,12 @@ const WelcomePage = () => {
       <button style={{backgroundColor:"#ff4d4d",}} onClick={handlelogout}>log out</button>
     </div>
     <div className="min-h-screen flex items-center justify-center bg-cover bg-center" style={{backgroundImage:"url('/background-pic.jpg')"}}>
-    
+
+    <div className="bg-white rounded-lg shadow-lg w-96 p-6">
+      <div className="bg-gray-100 rounded-lg p-6 text-center">
+        
+      </div>
+    </div>
 
     </div>
     </>
