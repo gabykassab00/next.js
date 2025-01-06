@@ -19,23 +19,25 @@ const Upload = () => {
         const formData = new FormData();
         formData.append('file',file)
 
-    }
-
-    try{
-        const response = await fetch('http://127.0.0.1:8000/api/upload',{
-            method:'POST',
-            body:FormData,
-        })
-        const result = await response.json();
-
-        if (response.ok){
-            setstatus(result.message || 'file uploaded successfully');
+        
+        try{
+            const response = await fetch('http://127.0.0.1:8000/api/upload',{
+                method:'POST',
+                body:formData,
+            })
+            const result = await response.json();
+            
+            if (response.ok){
+                setstatus(result.message || 'file uploaded successfully');
+            }
+            else {
+                setstatus(result.message || 'error during file upload');
+            }
+        }catch(error){
+            setstatus("an error occuped during upload")
         }
-        else {
-            setstatus(result.message || 'error during file upload');
-        }
+        
     }
-
 
 
   return (
