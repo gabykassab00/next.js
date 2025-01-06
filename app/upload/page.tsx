@@ -1,11 +1,12 @@
 "use client";
+import { useRouter } from 'next/navigation';
 import React, {  useState } from 'react'
 
 
 const Upload = () => {
     const [file,setfile] = useState(null);
     const [status,setstatus] = useState('')
-
+    const router = useRouter();
     const onfilechange = (e:any)=>{
         setfile(e.target.files[0]);
     }
@@ -41,7 +42,13 @@ const Upload = () => {
 
 
   return (
-    <div className='min-h-screen flex items-center justify-center bg-gray-100'>
+    <div className='min-h-screen flex items-center justify-center bg-cover bg-center' style={{backgroundImage:"url('/background-pic.jpg')"}}>
+    
+    <button onClick={()=>router.push("/welcome")}
+        className='absolute top-4 right-4 bg-white text-blue-700 rounded-lg py-2 px-4 '>
+        Go Back
+    </button>
+        
         <div className='bg-white p-6 rounded shadow w-80'>
             <h1 className='text-lg font-bold mb-4'>
                 Upload File
