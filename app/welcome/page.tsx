@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; 
+import Image from "next/image";
 const WelcomePage = () => {
   const [authenticated, setAuthenticated] = useState(false);
   const router = useRouter();
@@ -70,7 +71,10 @@ const WelcomePage = () => {
 
     <div className="bg-white rounded-lg shadow-lg w-96 p-6">
       <div className="bg-gray-100 rounded-lg p-6 text-center">
-        
+        <div className="mb-4">
+          <Image src="/logo.png" alt="logo" width={50} height={50} className="mx-auto"/>
+         </div>
+         
       </div>
     </div>
 
