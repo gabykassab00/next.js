@@ -7,6 +7,13 @@ const Upload = () => {
             <h1 className='text-lg font-bold mb-4'>
                 Upload File
             </h1>
+            <input 
+            type='file'
+            onChange={}
+            className='border p-2 mb-4 w-full'/>
+            <button onClick={} className='bg-blue-500 text-white py-2 px-4 rounded w-full hover:bg-blue-600'>
+                Upload
+            </button>
         </div>
       
     </div>
