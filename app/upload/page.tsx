@@ -1,3 +1,4 @@
+"use client";
 import React, {  useState } from 'react'
 
 
@@ -6,7 +7,14 @@ const Upload = () => {
     const [status,setstatus] = useState('')
 
     const onfilechange = (e:any)=>{
+        setfile(e.target.files[0]);
+    }
 
+    const uploadfile = async ()=>{
+        if(!file){
+            alert('please select a file first');
+            return;
+        }
     }
 
 
@@ -21,7 +29,7 @@ const Upload = () => {
             type='file'
             onChange={onfilechange}
             className='border p-2 mb-4 w-full'/>
-            <button onClick={} className='bg-blue-500 text-white py-2 px-4 rounded w-full hover:bg-blue-600'>
+            <button onClick={uploadfile} className='bg-blue-500 text-white py-2 px-4 rounded w-full hover:bg-blue-600'>
                 Upload
             </button>
             {status && <p className='mt-4 text-sm'>{status}</p>}
