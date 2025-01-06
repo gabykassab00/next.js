@@ -74,7 +74,10 @@ const WelcomePage = () => {
         <div className="mb-4">
           <Image src="/logo.png" alt="logo" width={50} height={50} className="mx-auto"/>
          </div>
-         
+         <h1 className=" text-2xl font-bold mb-2 ">AIPRO</h1>
+         <p className="text-blue-500 mb-2">
+         AIPRO Football Analyzer For in-Depth Match Insights
+         </p>
       </div>
     </div>
 
