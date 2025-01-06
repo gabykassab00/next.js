@@ -84,6 +84,10 @@ const WelcomePage = () => {
           <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full hover:bg-blue-600">
             Saved Stats
           </button>
+          <p className="text-gray-500">Or</p>
+          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full hover:bg-blue-600">
+            Upload File
+          </button>
          </div>
       </div>
     </div>
