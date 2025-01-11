@@ -18,7 +18,7 @@ export default function RootLayout({
 
       const pathname = usePathname()
 
-      const shownavbar =pathname !=='/welcome' && pathname !== '/upload' && pathname !=='/character';
+      const shownavbar =pathname !=='/welcome' && pathname !== '/upload' && pathname !=='/character' && pathname!=='/team';
 
   return (
     <html lang="en">
