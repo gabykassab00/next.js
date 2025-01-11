@@ -101,13 +101,45 @@ const page = () => {
                 average_speed :number;
                 total_distance:number;
               };
-              
+              return {
+                playerId,
+                averageSpeed:typedStats.average_speed,
+                totalDistance:typedStats.total_distance,
+              }
+            }),
+            team2:Object.entries(data.team_stats.team2).map(([playerId,stats])=>{
+              const typedStats = stats as {
+                average_speed:number;
+                total_distance:number;
+              }
+              return {
+                playerId,
+                averageSpeed:typedStats.average_speed,
+                totalDistance:typedStats.total_distance,
+              }
             })
+          },
+          teamSummary:{
+            team1:{
+              averageSpeed:Number(data.team_summary.team1.average_speed),
+              totalDistance:Number(data.team_summary.team1.total_distance),
+            },
+            team2:{
+              averageSpeed:Number(data.team_summary.team2.average_speed),
+              totalDistance:Number(data.team_summary.team2.total_distance),
+            }
           }
         }
+
+        setpassesData(formattedData)
+      }catch(error){
+        setError("failed to fetch data");
+        console.error(error)
       }
     }
-  })
+    fecthPassesData();
+  },[]);
+
 
 
 
