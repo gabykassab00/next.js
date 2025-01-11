@@ -40,6 +40,33 @@ interface TeamPassesData {
   }
 }
 
+const passColumns =[
+  {
+    key:"passer",
+    label:"passer ID",
+  },
+  {
+    key:"totalpasses",
+    label:"total passes",
+  }
+]
+
+const statsColumns = [
+  {
+    key :"playerid",
+    label:"player id"
+  },
+  {
+    key:"averagespeed",
+    label:"average speed (km/h)"
+  },
+  {
+    key:"total distance",
+    label:"total distance (m)",
+  }
+]
+
+
 
 const page = () => {
   return (
