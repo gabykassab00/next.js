@@ -197,6 +197,35 @@ const page = () => {
           total team passes :{passesData?.totalPassersPerTeam.team1}
         </p>
       </div>
+
+      <h2 className='text-2xl font-semibold mb-4 text-gray-600'>
+        team 2 passes
+      </h2>
+      <div className='overflow-x-auto'>
+        <table className='min-w-full table-auto bg-white border border-gray-300 rounded-lg shadow-lg'>
+          <thead>
+            <tr className='bg-gray-200 text-gray-600 uppercase text-sm leading normal'>
+              {passColumns.map((column)=>(
+                <th key={column.key} className='py-3 px-6 text-left'>
+                  {column.label}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className='text-gray-600 text-sm font-light'>
+            {passesData?.team2.map((row,index)=>(
+              <tr 
+              key={index} className='border-b border-gray-200 hover:bg-gray-100'>
+                <td className='py-3 px-6 text-left'>{row.passer}</td>
+                <td className='py-3 px-6 text-left'>{row.totalPasses}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className='mt-2 font-semibold'>
+          total team passes :{passesData?.totalPassersPerTeam.team2}
+        </p>
+      </div>
       
     </div>
   )
