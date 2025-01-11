@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 interface PasserData{
@@ -69,6 +69,23 @@ const statsColumns = [
 
 
 const page = () => {
+  const [passesData,setpassesData] = useState<TeamPassesData | null>(null);
+  const [error,setError] = useState("");
+
+  useEffect(()=>{
+    const fecthPassesData = async()=>{
+      try{
+        const response = await fetch("http://127.0.0.1:8000/api/stats");
+        if(!response.ok){
+          throw new Error(`failed to fetch ${response.status}`);
+        }
+        const data = await response.json();
+      }
+    }
+  })
+
+
+
   return (
     <div>
       
