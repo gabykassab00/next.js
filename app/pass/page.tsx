@@ -144,7 +144,33 @@ const page = () => {
 
 
   return (
-    <div>
+    <div className='container mx-auto p-4'>
+      <h1 className='text-3xl font-bold mb-6 text-center text-gray-700'>
+        Team Passes and Stats
+      </h1>
+      <div className='mb-6'>
+        <h2 className='text-2xl font-semibold mb-4 text-gray-600'>
+          team ball control
+        </h2>
+        <p>team1 : {passesData.teamBallControl.team1.toFixed(2)}%</p>
+        <p>team2 : {passesData?.teamBallControl.team2.toFixed(2)}%</p>
+      </div>
+      <div className='mb-6'>
+        <h2 className='text-2xl font-semibold mb-4 text-gray-600'>
+          Team Summary
+        </h2>
+        <p>
+          <strong>team1 :</strong>average speed:{" "}
+          {passesData?.teamSummary.team1.averageSpeed.toFixed(2)}km/h,total
+          distance :{passesData?.teamSummary.team1.totalDistance.toFixed(2)}m
+        </p>
+        <p>
+          <strong>team 2 :</strong> average speed:{ " "}
+          {passesData?.teamSummary.team2.averageSpeed.toFixed(2)} km/h,total 
+          distance:{passesData?.teamSummary.team2.totalDistance.toFixed(2)} m 
+        </p>
+      </div>
+
       
     </div>
   )
