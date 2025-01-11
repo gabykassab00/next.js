@@ -22,6 +22,11 @@ const page = () => {
           className='bg-blue-500 text-white py-2 px-4 rounded w-full hover:bg-blue-600'>
             Player
           </button>
+          <button 
+          onClick={()=>alert('button 2 clicked')}
+          className='bg-green-500 text-white py-2 px-4 rounded w-full hover:bg-green-600'>
+            coach
+          </button>
         </div>
       </div>
     </div>
