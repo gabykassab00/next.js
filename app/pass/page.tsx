@@ -80,6 +80,31 @@ const page = () => {
           throw new Error(`failed to fetch ${response.status}`);
         }
         const data = await response.json();
+
+        const formattedData:TeamPassesData = {
+          team1:Object.entries(data.passers_totals.team1).map(([passer,totalPasses])=>({
+            passer,
+            totalPasses:Number(totalPasses)
+          })),
+          team2:Object.entries(data.passers_totals.team2).map(([passer,totalPasses])=>({
+            passer,
+            totalPasses:Number(totalPasses)
+          })),
+          totalPassersPerTeam:data.total_passes_per_team,
+          teamBallControl:{
+            team1:data.team_ball_control.team1,
+            team2:data.team_ball_control.team2,
+          },
+          teamStats:{
+            team1:Object.entries(data.team_stats.team1).map(([playerId,stats])=>{
+              const typedStats = stats as {
+                average_speed :number;
+                total_distance:number;
+              };
+              
+            })
+          }
+        }
       }
     }
   })
