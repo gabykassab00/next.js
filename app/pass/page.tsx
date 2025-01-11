@@ -152,7 +152,7 @@ const page = () => {
         <h2 className='text-2xl font-semibold mb-4 text-gray-600'>
           team ball control
         </h2>
-        <p>team1 : {passesData.teamBallControl.team1.toFixed(2)}%</p>
+        <p>team1 : {passesData?.teamBallControl.team1.toFixed(2)}%</p>
         <p>team2 : {passesData?.teamBallControl.team2.toFixed(2)}%</p>
       </div>
 
@@ -257,7 +257,33 @@ const page = () => {
       </div>
 
 
-      
+      <h2 className='text-2xl font-semibold mb-4 text-gray-600'>team 2 stats</h2>
+      <div className='overflow-x-auto'>
+        <table className='min-w-full table-auto bg-white border border-gray-300 rounded-lg shadow-lg'>
+          <thead>
+            <tr className='bg-gray-200 text-gray-600 uppercase text-sm leading-normal'>
+              {statsColumns.map((column)=>(
+                <th key={column.key} className='py-3 px-6 text-left'>
+                  {column.label}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className='text-gray-600 text-sm font-light'>
+            {passesData?.teamStats.team2.map((row,index)=>(
+              <tr key={index} className='border-b border-gray-200 hover:bg-gray-100'>
+                <td className='py-3 px-6 text-left'>{row.playerId}</td>
+                <td className='py-3 px-6 text-left'>
+                  {row.averageSpeed.toFixed(2)}
+                </td>
+                <td className='py-3 px-6 text-left'>
+                  {row.totalDistance.toFixed(2)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }
