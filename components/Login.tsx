@@ -173,7 +173,7 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                 </>
             )}
 
-                <button type='submit' className='inline-flex w-full items-center justify-center rounded-lg bg-blue-600 p-2 py-3 text-sm font-medium text-white outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 disabled:bg-gray-400'>
+                <button type='submit' className='inline-flex w-full items-center justify-center rounded-lg bg-blue-600 p-2 py-3 text-sm font-medium text-white outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 disabled:bg-gray-400 mt-2'>
                     {signup?"Sign Up":"Login"}
                 </button>
                 <GoogleOAuthProvider  clientId='429897524558-b5k6c8ppsg45su3vf92fllnfpu6q49ui.apps.googleusercontent.com'>
@@ -186,7 +186,7 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
         <div className='mt-6 text-center text-sm text-slate-600'>
             {signup ?(
                 <>
-                Already have an account ?
+                Already have an account ? {""}
                 <a className='font-medium text-[#4285f2]' onClick={(e)=>{stoppropagation(e);toggleform(false)}}>
                     Log in
                 </a>
@@ -199,9 +199,9 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                         Reset your password
                         </a>
                 </p>
-                Don't you have an account
+                Don't you have an account? {""}
                 <a className='font-medium text-[#4285f4]' onClick={(e)=>{stoppropagation(e);toggleform(true)}}>
-                   <br></br> Sign up
+                    Sign Up
                 </a>
                 
                 </>

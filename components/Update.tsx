@@ -18,10 +18,10 @@ const Update = () => {
             />
           </div>
           <div className="text-left mt-4">
-            <p className="text-2xl font-semibold text-blue-500" color="blue">
+            <p className="text-2xl font-semibold px-1 text-blue-500" color="blue">
               Introducing AIpro Editor
             </p>
-            <p className="text-sm">
+            <p className="text-sm px-1">
               Explore AIpro Editor's latest updates: New Label Window, Project
               Label Preset, and the launch of Editor Premium to elevate your
               video clipping and coding experience!
@@ -38,10 +38,10 @@ const Update = () => {
             />
           </div>
           <div className="text-left mt-4">
-            <p className="text-2xl font-semibold text-blue-500" color="blue">
+            <p className="text-2xl font-semibold px-1 text-blue-500" color="blue">
             AIpro’s Tactical Feed 
             </p>
-            <p className="text-sm">
+            <p className="text-sm px-1">
             See how we’ve imporved our automated tactical feed
             </p>
           </div>
@@ -56,10 +56,10 @@ const Update = () => {
             />
           </div>
           <div className="text-left mt-4">
-            <p className="text-2xl font-semibold text-blue-500" color="blue">
+            <p className="text-2xl font-semibold px-1 text-blue-500" color="blue">
               Introducing AIpro Editor
             </p>
-            <p className="text-sm">
+            <p className="text-sm px-1">
             How do we benefit from being able to develop using a server-less platform
             </p>
           </div>

@@ -32,7 +32,7 @@ const Hero = () => {
       </div>
       {/*right */}
       <div className="relative flex flex-1 items-start border-2 rounded-lg overflow-hidden">
-      <video autoPlay loop muted controls style={{ width: '100%', height: '100%' ,objectFit: 'cover'}} >
+      <video autoPlay loop muted controls style={{ width: '100%', height: '100%' ,objectFit: 'fill'}} >
         <source src="hero-video.mp4" type="video/mp4" />
       </video>
       </div>

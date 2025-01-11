@@ -12,7 +12,7 @@ const Clients = () => {
             alt="clients page image"
             width={240}
             height={50}
-            className="clients-phone"
+            className="clients-phone rounded-lg"
           ></Image>
         </div>
         <div className="clients-content">

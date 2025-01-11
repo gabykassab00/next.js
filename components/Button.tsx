@@ -8,7 +8,7 @@ type buttonprops = {
   onClick?:()=>void;
 };
 
-const Button = ({ type, title, icon, variant,onClick }: buttonprops) => {
+const Button = ({ type, title, icon, variant,onClick}: buttonprops) => {
   return <button
   className={`flexCenter gap-3 rounded-full border ${variant}`}
   type={type}

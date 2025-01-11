@@ -30,6 +30,9 @@ const Upload = () => {
             
             if (response.ok){
                 setstatus(result.message || 'file uploaded successfully');
+                // here 
+                router.push(`/pass?passes=${encodeURIComponent(JSON.stringify(result.passes))}`);
+                //here
             }
             else {
                 setstatus(result.message || 'error during file upload');
@@ -50,7 +53,7 @@ const Upload = () => {
     </button>
         
         <div className='bg-white p-6 rounded shadow w-80'>
-            <h1 className='text-lg font-bold mb-4'>
+            <h1 className='text-lg font-bold mb-4 text-center'>
                 Upload File
             </h1>
             <input 

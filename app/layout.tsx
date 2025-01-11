@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import path from "path";
 
 export default function RootLayout({
   children,
