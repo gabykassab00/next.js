@@ -50,7 +50,7 @@ const Team2Stats = () => {
 
 
   if (!team2Data) {
-    return <div className="text-center">Loading...</div>;
+    return <div className="text-center">Loading</div>;
   }
 
   return (
