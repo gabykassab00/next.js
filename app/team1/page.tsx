@@ -47,8 +47,38 @@ const page = () => {
 
 
   return (
-    <div>
+    <div className='min-h-screen flex flex-col items-center justify-center bg-cover bg-center' style={{backgroundImage:"url('/background-pic.jpg')" }}>
+        <button onClick={()=>router.push("/team")} className='absolute top-4 right-4 bg-white text-blue-700 rounded-lg py-2 px-4 shadow-lg hover:bg-blue-100'>
+           Go Back 
+        </button>
       
+        <div className='bg-white p-6 rounded shadow w-4/5 max-w-2xl'>
+        <h1 className='text-3xl font-bold mb-6 text-center text-gray-700'>
+        team 1 stats
+        </h1>
+
+        <div className='mb-6'>
+            <h2 className='text-2xl font-semibold mb-4 text-gray-600'>team ball control</h2>
+            <p>team 1 ball control:{team1Data?.ballControl.toFixed(2)}%</p>
+        </div>
+
+        <div className='mb-6'>
+            <h2 className='text-2xl font-semibold mb-4 text-gray-600'>team summary</h2>
+            <p>
+                <strong>average speed:</strong> {team1Data?.summary.averageSpeed.toFixed(2)} km/h
+            </p>
+            <p>
+                <strong>total distance:</strong> {team1Data?.summary.totalDistance.toFixed(2)} m 
+            </p>
+        </div>
+
+        <div className='mb-6'>
+            <h2 className='text-2xl font-semibold mb-4 text-gray-600'>team 1 total passes</h2>
+            <p>{team1Data?.totalPasses}</p>
+        </div>
+
+        </div>
+
     </div>
   )
 }
