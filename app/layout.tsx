@@ -18,7 +18,9 @@ export default function RootLayout({
 
       const pathname = usePathname()
 
-      const shownavbar =pathname !=='/welcome' && pathname !== '/upload' && pathname !=='/character' && pathname!=='/team';
+      const hiddenPaths = ['/welcome', '/upload', '/character', '/team', '/player','/player1','/player2','/team1','/team2'];
+      const shownavbar = !hiddenPaths.includes(pathname);
+
 
   return (
     <html lang="en">

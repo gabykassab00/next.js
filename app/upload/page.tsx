@@ -31,7 +31,8 @@ const Upload = () => {
             if (response.ok){
                 setstatus(result.message || 'file uploaded successfully');
                 // here 
-                router.push(`/pass?passes=${encodeURIComponent(JSON.stringify(result.passes))}`);
+                // router.push(`/pass?passes=${encodeURIComponent(JSON.stringify(result.passes))}`);
+                router.push('/character')
                 //here
             }
             else {

@@ -14,16 +14,16 @@ const page = () => {
       </button>
 
       <div className='bg-white p-8 rounded shadow w-96'>
-        <h1 className='text-xl font-bold mb-6 text-center'>are you the coach of team1 or team2?</h1>
+        <h1 className='text-xl font-bold mb-6 text-center'>are you a player in team1 or team2?</h1>
 
         <div className='space-y-4'>
           <button 
-          onClick={()=>router.push("/team1")}
+          onClick={()=>router.push("/player1")}
           className='bg-blue-500 text-white py-2 px-4 rounded w-full hover:bg-blue-600'>
             Team 1 
           </button>
           <button 
-          onClick={()=>router.push('/team2')}
+          onClick={()=>router.push('/player2')}
           className='bg-green-500 text-white py-2 px-4 rounded w-full hover:bg-green-600'>
             Team 2 
           </button>

@@ -18,7 +18,7 @@ const page = () => {
 
         <div className='space-y-4'>
           <button 
-          onClick={()=>router.push("/team")}
+          onClick={()=>router.push("/player")}
           className='bg-blue-500 text-white py-2 px-4 rounded w-full hover:bg-blue-600'>
             Player
           </button>
