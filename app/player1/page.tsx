@@ -13,6 +13,7 @@ const page = () => {
 
     const [team1PlayerStats,setTeam1PlayerStats] = useState<PlayerStats[]>([])
     const router = useRouter()
+    const [showmodal,setshowmodal] = useState(false)
 
     useEffect(()=>{
         const fetchTeam1PlayerStats = async()=>{
@@ -45,6 +46,47 @@ const page = () => {
         }
         fetchTeam1PlayerStats();
     },[])
+
+
+    const handlegetairesponse = async(playerId:string)=>{
+      const selectedplayer = team1PlayerStats.find((player)=>player.playerId === playerId);
+
+      if(!selectedplayer){
+        alert("player not found");
+        return;
+      }
+
+      try {
+        
+        const response = await fetch("http://127.0.0.1:8000/api/ai",{
+          method:"POST",
+          headers:{
+            'content-type':"application/json",
+          },
+          body:JSON.stringify({
+            stats:[
+              {
+                averagespeed:selectedplayer.averageSpeed,
+                totaldistance :selectedplayer.totalDistance,
+                totalpasses :selectedplayer.totalPasses,
+              }
+            ]
+          })
+        })
+
+        if(!response.ok){
+          throw new Error(`failed to fetch AI response : ${response.status}`)
+        }
+
+        const data = await response.json();
+
+        router.push(`/recommendation?feedback=${encodeURIComponent(data.answer)}`)
+      } catch(err:any){
+        console.error("error in handleairepsonse",err.message);
+      }
+    }
+
+
 
   return (
     <div className='min-h-screen flex flex-col items-center justify-center bg-cover bg-center' style={{backgroundImage:"url('/background-pic.jpg')"}}>
