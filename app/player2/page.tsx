@@ -14,6 +14,8 @@ interface PlayerStats {
 const Team2PlayerStats = () => {
   const [team2PlayerStats, setTeam2PlayerStats] = useState<PlayerStats[]>([]);
   const router = useRouter(); 
+  const [showmodal,setshowmodal] = useState(false)
+  const [selectedplayer,setselectedplayer] = useState<PlayerStats |null>(null)
 
   useEffect(() => {
     const fetchTeam2PlayerStats = async () => {
@@ -36,7 +38,7 @@ const Team2PlayerStats = () => {
               playerId,
               averageSpeed: typedStats.average_speed,
               totalDistance: typedStats.total_distance,
-              totalPasses: data.passers_totals.team2[playerId] || 0, // Fallback to 0 if player has no passes
+              totalPasses: data.passers_totals.team2[playerId] || 0, 
             };
           }
         );
@@ -49,6 +51,51 @@ const Team2PlayerStats = () => {
 
     fetchTeam2PlayerStats();
   }, []);
+
+
+
+
+
+  const handleGetAIResponse = async (playerId: string) => {
+    const selectedPlayer = team2PlayerStats.find((player) => player.playerId === playerId);
+
+    if (!selectedPlayer) {
+      alert("Player not found.");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/ai", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          stats: [
+            {
+              averageSpeed: selectedPlayer.averageSpeed,
+              totalDistance: selectedPlayer.totalDistance,
+              totalPasses: selectedPlayer.totalPasses,
+            },
+          ],
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch AI response: ${response.status}`);
+      }
+      const data = await response.json();
+
+      router.push(`/recommendation?feedback=${encodeURIComponent(data.answer)}`);
+    } catch (err: any) {
+      console.error("Error in handleGetAIResponse:", err.message);
+    }
+  };
+
+
+
+
+
 
 
 
@@ -98,7 +145,40 @@ const Team2PlayerStats = () => {
             </tbody>
           </table>
         </div>
+        <button
+          onClick={() => setshowmodal(true)}
+          className="mt-6 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700"
+        >
+          Get AI Feedback
+        </button>
       </div>
+      {showmodal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <h2 className="text-xl font-semibold mb-4">Select a Player</h2>
+            <ul>
+              {team2PlayerStats.map((player) => (
+                <li
+                  key={player.playerId}
+                  className="cursor-pointer py-2 px-4 hover:bg-gray-200 rounded"
+                  onClick={() => {
+                    setshowmodal(false);
+                    handleGetAIResponse(player.playerId);
+                  }}
+                >
+                  Player {player.playerId}
+                </li>
+              ))}
+            </ul>
+            <button
+              onClick={() => setshowmodal(false)}
+              className="mt-4 bg-gray-300 text-gray-800 py-2 px-4 rounded hover:bg-gray-400"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
