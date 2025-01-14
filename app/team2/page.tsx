@@ -12,6 +12,9 @@ interface TeamStats {
 
 const Team2StatsPage = () => {
   const [team2Data, setTeam2Data] = useState<TeamStats | null>(null);
+  const [saveStatsModal, setSaveStatsModal] = useState(false);
+  const [gameDate, setGameDate] = useState("");
+  const [gameName, setGameName] = useState("");
   const router = useRouter();
 
   useEffect(() => {
@@ -61,7 +64,7 @@ const Team2StatsPage = () => {
               totalDistance: team2Data.totalDistance,
             },
           ],
-          action:"analyze",
+          action: "analyze",
         }),
       });
 
@@ -79,6 +82,48 @@ const Team2StatsPage = () => {
       router.push(`/recommendation?feedback=${encodeURIComponent(data.answer)}`);
     } catch (err: any) {
       console.error("Error in handleGetAIResponse:", err.message);
+    }
+  };
+
+  const handleSaveStats = async () => {
+    if (!gameDate || !gameName) {
+      alert("Please fill out all fields before saving.");
+      return;
+    }
+    try {
+      const accessToken = localStorage.getItem("access_token");
+      if (!accessToken) {
+        alert("User is not authenticated. Please log in.");
+        return;
+      }
+
+      const headers = new Headers();
+      headers.append("Content-Type", "application/json");
+      headers.append("Authorization", `Bearer ${accessToken}`);
+
+      const response = await fetch("http://127.0.0.1:8000/api/team", {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          date: gameDate,
+          game: gameName,
+          ball_control: team2Data?.ballControl,
+          distance_covered: team2Data?.totalDistance,
+          average_speed: team2Data?.averageSpeed,
+          total_passes: team2Data?.totalPasses,
+        }),
+        credentials: "include",
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to save stats: ${response.status}`);
+      }
+
+      alert("Stats saved successfully!");
+      setSaveStatsModal(false);
+    } catch (err: any) {
+      console.error("Error in handleSaveStats:", err.message);
+      alert("Failed to save stats.");
     }
   };
 
@@ -133,10 +178,49 @@ const Team2StatsPage = () => {
         >
           Get AI Feedback
         </button>
+        <button
+          onClick={() => setSaveStatsModal(true)}
+          className="mt-6 ml-4 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700"
+        >
+          Save Stats
+        </button>
       </div>
+
+      {saveStatsModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <h2 className="text-xl font-semibold mb-4">Save Team Stats</h2>
+            <input
+              type="text"
+              placeholder="Game Date (YYYY-MM-DD)"
+              className="border p-2 rounded w-full mb-4"
+              value={gameDate}
+              onChange={(e) => setGameDate(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Game Name"
+              className="border p-2 rounded w-full mb-4"
+              value={gameName}
+              onChange={(e) => setGameName(e.target.value)}
+            />
+            <button
+              onClick={handleSaveStats}
+              className="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 mr-2"
+            >
+              Save
+            </button>
+            <button
+              onClick={() => setSaveStatsModal(false)}
+              className="mt-4 bg-gray-300 text-gray-800 py-2 px-4 rounded hover:bg-gray-400"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default Team2StatsPage;
-
