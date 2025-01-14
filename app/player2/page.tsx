@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -13,9 +12,12 @@ interface PlayerStats {
 
 const Team2PlayerStats = () => {
   const [team2PlayerStats, setTeam2PlayerStats] = useState<PlayerStats[]>([]);
+  const [showmodal, setshowmodal] = useState(false);
+  const [saveStatsModal, setSaveStatsModal] = useState(false);
+  const [selectedplayer, setselectedplayer] = useState<PlayerStats | null>(null);
+  const [gameDate, setGameDate] = useState("");
+  const [gameName, setGameName] = useState("");
   const router = useRouter(); 
-  const [showmodal,setshowmodal] = useState(false)
-  const [selectedplayer,setselectedplayer] = useState<PlayerStats |null>(null)
 
   useEffect(() => {
     const fetchTeam2PlayerStats = async () => {
@@ -52,10 +54,6 @@ const Team2PlayerStats = () => {
     fetchTeam2PlayerStats();
   }, []);
 
-
-
-
-
   const handleGetAIResponse = async (playerId: string) => {
     const selectedPlayer = team2PlayerStats.find((player) => player.playerId === playerId);
 
@@ -78,7 +76,7 @@ const Team2PlayerStats = () => {
               totalPasses: selectedPlayer.totalPasses,
             },
           ],
-          action:"analyze",
+          action: "analyze",
         }),
       });
 
@@ -93,12 +91,47 @@ const Team2PlayerStats = () => {
     }
   };
 
+  const handleSaveStats = async () => {
+    if (!gameDate || !gameName) {
+      alert("Please fill out all fields before saving.");
+      return;
+    }
+    try {
+      const accessToken = localStorage.getItem("access_token"); 
+      if (!accessToken) {
+        alert("User is not authenticated. Please log in.");
+        return;
+      }
 
+      const headers = new Headers();
+      headers.append("Content-Type", "application/json");
+      headers.append("Authorization", `Bearer ${accessToken}`);
 
+      const response = await fetch("http://127.0.0.1:8000/api/team", {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          date: gameDate,
+          game: gameName,
+          ball_control: 0,
+          distance_covered: 0,
+          average_speed: 0,
+          total_passes: 0,
+        }),
+        credentials: "include",
+      });
 
+      if (!response.ok) {
+        throw new Error(`Failed to save stats: ${response.status}`);
+      }
 
-
-
+      alert("Stats saved successfully!");
+      setSaveStatsModal(false);
+    } catch (err: any) {
+      console.error("Error in handleSaveStats:", err.message);
+      alert("Failed to save stats.");
+    }
+  };
 
   return (
     <div
@@ -152,6 +185,12 @@ const Team2PlayerStats = () => {
         >
           Get AI Feedback
         </button>
+        <button
+          onClick={() => setSaveStatsModal(true)}
+          className="mt-6 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700"
+        >
+          Save Stats
+        </button>
       </div>
       {showmodal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -173,6 +212,39 @@ const Team2PlayerStats = () => {
             </ul>
             <button
               onClick={() => setshowmodal(false)}
+              className="mt-4 bg-gray-300 text-gray-800 py-2 px-4 rounded hover:bg-gray-400"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+      {saveStatsModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <h2 className="text-xl font-semibold mb-4">Save Team Stats</h2>
+            <input
+              type="text"
+              placeholder="Game Date (YYYY-MM-DD)"
+              className="border p-2 rounded w-full mb-4"
+              value={gameDate}
+              onChange={(e) => setGameDate(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Game Name"
+              className="border p-2 rounded w-full mb-4"
+              value={gameName}
+              onChange={(e) => setGameName(e.target.value)}
+            />
+            <button
+              onClick={handleSaveStats}
+              className="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 mr-2"
+            >
+              Save
+            </button>
+            <button
+              onClick={() => setSaveStatsModal(false)}
               className="mt-4 bg-gray-300 text-gray-800 py-2 px-4 rounded hover:bg-gray-400"
             >
               Close
