@@ -175,7 +175,46 @@ const Team1StatsPage = () => {
         >
           Get AI Feedback
         </button>
+        <button
+          onClick={() => setshowmodal(true)}
+          className="mt-6 ml-4 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700"
+        >
+          Save Stats
+        </button>
       </div>
+      {showmodal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <h2 className="text-xl font-semibold mb-4">Save Stats</h2>
+            <input
+              type="text"
+              placeholder="Game Date (YYYY-MM-DD)"
+              className="border p-2 rounded w-full mb-4"
+              value={gamedate}
+              onChange={(e) => setgamedate(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Game Name"
+              className="border p-2 rounded w-full mb-4"
+              value={gamename}
+              onChange={(e) => setgamename(e.target.value)}
+            />
+            <button
+              onClick={handleSaveStats}
+              className="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 mr-2"
+            >
+              Save
+            </button>
+            <button
+              onClick={() => setshowmodal(false)}
+              className="bg-gray-300 text-gray-800 py-2 px-4 rounded-lg hover:bg-gray-400"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
