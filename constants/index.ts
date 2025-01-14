@@ -132,7 +132,7 @@ export const reviewData = [
     id: 7,
     name: "Holger Fuchs",
     review:
-      "The BEPRO videos are shared with the clubs at a very high quality alongside data, so there is a huge time saving.",
+      "The AIPRO videos are shared with the clubs at a very high quality alongside data, so there is a huge time saving.",
     image: "/holger.jpg",
     rank:"CEO",
     club:"Regionalliga Nordost",

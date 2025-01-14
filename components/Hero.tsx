@@ -21,7 +21,7 @@ const Hero = () => {
         The smartest Ai Analyzer and chosen by many top professional clubs to capture,
         review,share and analyze your games & training sessions
         </p>
-        <div className="flex w-full gap-3 sm:flex-row mt-2">
+        <div className="flex w-full gap-3 sm:flex-row mt-2 text-center ">
             <Button
             type="button"
             title = 'Try Software'

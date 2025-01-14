@@ -68,7 +68,7 @@ const WelcomePage = () => {
 
       <button className="absolute top-4 right-4 bg-red-500 text-white py-2 px-4 rounded-full hover:bg-red-600" onClick={handlelogout}>Logout</button>
     <div className="bg-white rounded-lg shadow-lg w-96 p-6">
-      <div className="bg-gray-100 rounded-lg p-6 text-center">
+      <div className="bg-white-100 rounded-lg p-6 text-center">
         <div className="mb-4">
           <Image src="/logo.png" alt="logo" width={50} height={50} className="mx-auto"/>
          </div>
