@@ -13,6 +13,9 @@ interface TeamStats {
 const Team1StatsPage = () => {
   const [team1Data, setTeam1Data] = useState<TeamStats | null>(null);
   const router = useRouter();
+  const [showmodal,setshowmodal]= useState(false);
+  const [gamedate,setgamedate] = useState("");
+  const [gamename,setgamename] = useState("");
 
   useEffect(() => {
     const fetchTeam1Stats = async () => {
@@ -82,6 +85,45 @@ const Team1StatsPage = () => {
     }
   };
 
+
+  const handleSaveStats = async () => {
+    if (!team1Data || !gamedate || !gamename) {
+      alert("Please fill out all fields before saving.");
+      return;
+    }
+    try {
+      const accessToken = localStorage.getItem("access_token"); 
+      if (!accessToken) {
+        alert("User is not authenticated. Please log in.");
+        return;
+      }
+  
+      const headers = new Headers();
+      headers.append("Content-Type", "application/json");
+      headers.append("Authorization", `Bearer ${accessToken}`); 
+  
+      const response = await fetch("http://127.0.0.1:8000/api/team", {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          date: gamedate,
+          game: gamename,
+          ball_control: team1Data.ballControl,
+          distance_covered: team1Data.totalDistance,
+          average_speed: team1Data.averageSpeed,
+          total_passes: team1Data.totalPasses,
+        }),
+        credentials: "include", 
+      });
+  
+      alert("Stats saved successfully!");
+      setshowmodal(false);
+    } catch (err: any) {
+      console.error("Error in handleSaveStats:", err.message);
+      alert("Failed to save stats.");
+    }
+  };
+
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
@@ -139,3 +181,5 @@ const Team1StatsPage = () => {
 };
 
 export default Team1StatsPage;
+
+
