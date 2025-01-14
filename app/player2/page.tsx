@@ -78,6 +78,7 @@ const Team2PlayerStats = () => {
               totalPasses: selectedPlayer.totalPasses,
             },
           ],
+          action:"analyze",
         }),
       });
 

@@ -70,6 +70,7 @@ const Team1StatsPage = () => {
               totalPasses: selectedPlayer.totalPasses,
             },
           ],
+          action:"analyze",
         }),
       });
   

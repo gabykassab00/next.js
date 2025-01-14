@@ -61,6 +61,7 @@ const Team1StatsPage = () => {
               totalDistance: team1Data.totalDistance,
             },
           ],
+          action:"analyze",
         }),
       });
 
