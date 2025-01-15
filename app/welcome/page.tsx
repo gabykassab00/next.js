@@ -79,7 +79,7 @@ const WelcomePage = () => {
          <p className="text-gray-700 mb-6">Premium AI Analyzer Tool</p>
 
          <div className="space-y-4">
-          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full hover:bg-blue-600">
+          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full hover:bg-blue-600" onClick={()=>router.push('/save')}>
             Saved Stats
           </button>
           <p className="text-gray-500">Or</p>

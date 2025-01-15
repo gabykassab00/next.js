@@ -18,7 +18,7 @@ export default function RootLayout({
 
       const pathname = usePathname()
 
-      const hiddenPaths = ['/welcome', '/upload', '/character', '/team', '/player','/player1','/player2','/team1','/team2','/recommendation','/program'];
+      const hiddenPaths = ['/welcome', '/upload', '/character', '/team', '/player','/player1','/player2','/team1','/team2','/recommendation','/program','/save','/video'];
       const shownavbar = !hiddenPaths.includes(pathname);
 
 
