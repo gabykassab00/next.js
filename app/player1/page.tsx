@@ -13,8 +13,10 @@ const Player1StatsPage = () => {
   const [team1PlayerStats, setTeam1PlayerStats] = useState<PlayerStats[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [saveStatsModal, setSaveStatsModal] = useState(false);
+  const [selectedPlayerid,setselectedplayerid] = useState<string | null>(null)
   const [gameDate, setGameDate] = useState("");
   const [gameName, setGameName] = useState("");
+  const [actiontype,setactiontype] = useState<"aifeedback" |"savestats" | null >(null)
   const router = useRouter();
 
   useEffect(() => {
@@ -94,13 +96,24 @@ const Player1StatsPage = () => {
     }
   };
 
+
   const handleSaveStats = async () => {
-    if (!gameDate || !gameName) {
+    if (!gameDate || !gameName || !selectedPlayerid) {
       alert("Please fill out all fields before saving.");
       return;
     }
+
+    const selectedPlayer = team1PlayerStats.find(
+      (player) => player.playerId === selectedPlayerid
+    );
+
+    if (!selectedPlayer) {
+      alert("Player not found.");
+      return;
+    }
+
     try {
-      const accessToken = localStorage.getItem("access_token"); 
+      const accessToken = localStorage.getItem("access_token");
       if (!accessToken) {
         alert("User is not authenticated. Please log in.");
         return;
@@ -117,9 +130,9 @@ const Player1StatsPage = () => {
           date: gameDate,
           game: gameName,
           ball_control: 0,
-          distance_covered: 0,
-          average_speed: 0,
-          total_passes: 0,
+          distance_covered: selectedPlayer.totalDistance,
+          average_speed: selectedPlayer.averageSpeed,
+          total_passes: selectedPlayer.totalPasses,
         }),
         credentials: "include",
       });
@@ -135,6 +148,17 @@ const Player1StatsPage = () => {
       alert("Failed to save stats.");
     }
   };
+
+  const handleplayerselection = (playerID:string)=>{
+    setselectedplayerid(playerID);
+    setShowModal(false);
+    
+    if(actiontype ==="aifeedback"){
+      handleGetAIResponse(playerID);
+    }else if (actiontype ==="savestats"){
+      setSaveStatsModal(true)
+    }
+  }
 
   return (
     <div
@@ -184,13 +208,17 @@ const Player1StatsPage = () => {
         </div>
 
         <button
-          onClick={() => setShowModal(true)}
+          onClick={() =>{
+            setactiontype("aifeedback")
+            setShowModal(true)}}
           className="mt-6 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700"
         >
           Get AI Feedback
         </button>
         <button
-          onClick={() => setSaveStatsModal(true)}
+          onClick={() => {
+            setactiontype("savestats")
+            setShowModal(true)}}
           className="mt-6 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700"
         >
           Save Stats
@@ -207,8 +235,7 @@ const Player1StatsPage = () => {
                   key={player.playerId}
                   className="cursor-pointer py-2 px-4 hover:bg-gray-200 rounded"
                   onClick={() => {
-                    setShowModal(false);
-                    handleGetAIResponse(player.playerId);
+                    handleplayerselection(player.playerId)
                   }}
                 >
                   Player {player.playerId}
@@ -263,3 +290,4 @@ const Player1StatsPage = () => {
 };
 
 export default Player1StatsPage;
+
