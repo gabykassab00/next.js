@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { act, useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; 
 
 interface PlayerStats {
@@ -14,10 +14,11 @@ const Team2PlayerStats = () => {
   const [team2PlayerStats, setTeam2PlayerStats] = useState<PlayerStats[]>([]);
   const [showmodal, setshowmodal] = useState(false);
   const [saveStatsModal, setSaveStatsModal] = useState(false);
-  const [selectedplayer, setselectedplayer] = useState<PlayerStats | null>(null);
+  const [selectedplayerid, setselectedplayerid] = useState<string | null>(null);
   const [gameDate, setGameDate] = useState("");
   const [gameName, setGameName] = useState("");
   const router = useRouter(); 
+  const [actiontype,setactiontype] = useState<"aifeedback" | "savestats" |null >(null);
 
   useEffect(() => {
     const fetchTeam2PlayerStats = async () => {
@@ -92,12 +93,22 @@ const Team2PlayerStats = () => {
   };
 
   const handleSaveStats = async () => {
-    if (!gameDate || !gameName) {
+    if (!gameDate || !gameName || !selectedplayerid) {
       alert("Please fill out all fields before saving.");
       return;
     }
+
+    const selectedPlayer = team2PlayerStats.find(
+      (player) => player.playerId === selectedplayerid
+    );
+
+    if (!selectedPlayer) {
+      alert("Player not found.");
+      return;
+    }
+
     try {
-      const accessToken = localStorage.getItem("access_token"); 
+      const accessToken = localStorage.getItem("access_token");
       if (!accessToken) {
         alert("User is not authenticated. Please log in.");
         return;
@@ -114,9 +125,9 @@ const Team2PlayerStats = () => {
           date: gameDate,
           game: gameName,
           ball_control: 0,
-          distance_covered: 0,
-          average_speed: 0,
-          total_passes: 0,
+          distance_covered: selectedPlayer.totalDistance,
+          average_speed: selectedPlayer.averageSpeed,
+          total_passes: selectedPlayer.totalPasses,
         }),
         credentials: "include",
       });
@@ -132,6 +143,18 @@ const Team2PlayerStats = () => {
       alert("Failed to save stats.");
     }
   };
+
+
+  const handleplayerselection = (playerId:string)=>{
+    setselectedplayerid(playerId);
+    setshowmodal(false);
+
+    if(actiontype === "aifeedback"){
+      handleGetAIResponse(playerId);
+    }else if (actiontype === "savestats"){
+      setSaveStatsModal(true)
+    }
+  }
 
   return (
     <div
@@ -180,13 +203,17 @@ const Team2PlayerStats = () => {
           </table>
         </div>
         <button
-          onClick={() => setshowmodal(true)}
+          onClick={() => {
+            setactiontype("aifeedback")
+            setshowmodal(true)}}
           className="mt-6 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700"
         >
           Get AI Feedback
         </button>
         <button
-          onClick={() => setSaveStatsModal(true)}
+          onClick={() => {
+            setactiontype("savestats")
+            setshowmodal(true)}}
           className="mt-6 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700"
         >
           Save Stats
@@ -202,8 +229,7 @@ const Team2PlayerStats = () => {
                   key={player.playerId}
                   className="cursor-pointer py-2 px-4 hover:bg-gray-200 rounded"
                   onClick={() => {
-                    setshowmodal(false);
-                    handleGetAIResponse(player.playerId);
+                    handleplayerselection(player.playerId);
                   }}
                 >
                   Player {player.playerId}
