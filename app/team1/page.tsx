@@ -131,7 +131,7 @@ const Team1StatsPage = () => {
     >
       <button
         onClick={() => router.push("/team")}
-        className="absolute top-4 right-4 bg-white text-blue-700 rounded-lg py-2 px-4 shadow-lg hover:bg-blue-100"
+        className="absolute top-4 left-4 bg-white  rounded-lg py-2 px-4 shadow-lg hover:bg-blue-100"style={{color:"#1976d2"}}
       >
         Go Back
       </button>
@@ -171,13 +171,13 @@ const Team1StatsPage = () => {
 
         <button
           onClick={handleGetAIResponse}
-          className="mt-6 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700"
+          className="mt-6  text-white py-2 px-20 rounded-lg hover:bg-blue-700" style={{backgroundColor:"#1976d2"}}
         >
           Get AI Feedback
         </button>
         <button
           onClick={() => setshowmodal(true)}
-          className="mt-6 ml-4 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700"
+          className="mt-6 ml-6 bg-green-600 text-white py-2 px-28 rounded-lg hover:bg-green-700"
         >
           Save Stats
         </button>

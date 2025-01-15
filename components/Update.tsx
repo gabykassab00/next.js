@@ -18,7 +18,7 @@ const Update = () => {
             />
           </div>
           <div className="text-left mt-4">
-            <p className="text-2xl font-semibold px-6 text-blue-500" color="blue">
+            <p className="text-2xl font-semibold px-6 " color="blue" style={{color:"#1976d2"}}>
               Introducing AIpro Editor
             </p>
             <p className="text-sm px-6">
@@ -38,7 +38,7 @@ const Update = () => {
             />
           </div>
           <div className="text-left mt-4 ">
-            <p className="text-2xl font-semibold px-6 text-blue-500" color="blue">
+            <p className="text-2xl font-semibold px-6 " color="blue" style={{color:"#1976d2"}}>
             AIpro’s Tactical Feed 
             </p>
             <p className="text-sm px-6">
@@ -56,7 +56,7 @@ const Update = () => {
             />
           </div>
           <div className="text-left mt-4">
-            <p className="text-2xl font-semibold px-6 text-blue-500" color="blue" >
+            <p className="text-2xl font-semibold px-6 " color="blue" style={{color:"#1976d2"}}>
               Introducing AIpro Editor
             </p>
             <p className="text-sm px-6">

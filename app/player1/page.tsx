@@ -167,12 +167,12 @@ const Player1StatsPage = () => {
     >
       <button
         onClick={() => router.push("/player")}
-        className="absolute top-4 right-4 bg-white text-blue-700 rounded-lg py-2 px-4 shadow-lg hover:bg-blue-100"
+        className="absolute top-4 left-4 bg-white rounded-lg py-2 px-4 shadow-lg hover:bg-blue-100" style={{color:"#1976d2"}}
       >
         Go Back
       </button>
 
-      <div className="bg-white p-6 rounded shadow w-4/5 max-w-4xl">
+      <div className="bg-white p-6 rounded shadow w-4/5 max-w-4xl ">
         <h1 className="text-3xl font-bold mb-6 text-center text-gray-700">
           Team 1 Player Stats
         </h1>
@@ -181,10 +181,10 @@ const Player1StatsPage = () => {
           <table className="min-w-full table-auto bg-white border border-gray-300 rounded-lg shadow-lg">
             <thead>
               <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                <th className="py-3 px-6 text-left">Player ID</th>
-                <th className="py-3 px-6 text-left">Average Speed (km/h)</th>
-                <th className="py-3 px-6 text-left">Total Distance (m)</th>
-                <th className="py-3 px-6 text-left">Total Passes</th>
+                <th className="py-3 px-6 text-left text-sm">Player ID</th>
+                <th className="py-3 px-6 text-left text-sm">Average Speed (km/h)</th>
+                <th className="py-3 px-6 text-left text-sm">Total Distance (m)</th>
+                <th className="py-3 px-6 text-left text-sm">Total Passes</th>
               </tr>
             </thead>
             <tbody className="text-gray-600 text-sm font-light">
@@ -193,14 +193,14 @@ const Player1StatsPage = () => {
                   key={index}
                   className="border-b border-gray-200 hover:bg-gray-100"
                 >
-                  <td className="py-3 px-6 text-left">{player.playerId}</td>
-                  <td className="py-3 px-6 text-left">
+                  <td className="py-1 px-6 text-left text-xs">{player.playerId}</td>
+                  <td className="py-1 px-6 text-left text-xs">
                     {player.averageSpeed.toFixed(2)}
                   </td>
-                  <td className="py-3 px-6 text-left">
+                  <td className="py-1 px-6 text-left">
                     {player.totalDistance.toFixed(2)}
                   </td>
-                  <td className="py-3 px-6 text-left">{player.totalPasses}</td>
+                  <td className="py-1 px-6 text-left">{player.totalPasses}</td>
                 </tr>
               ))}
             </tbody>
@@ -211,7 +211,7 @@ const Player1StatsPage = () => {
           onClick={() =>{
             setactiontype("aifeedback")
             setShowModal(true)}}
-          className="mt-6 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700"
+          className="mt-6  text-white py-2 px-28 rounded-lg hover:bg-blue-700" style={{backgroundColor:'#1976d2'}}
         >
           Get AI Feedback
         </button>
@@ -219,21 +219,21 @@ const Player1StatsPage = () => {
           onClick={() => {
             setactiontype("savestats")
             setShowModal(true)}}
-          className="mt-6 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700"
+          className="mt-6 bg-green-600 text-white py-2 px-32 ml-32 rounded-lg hover:bg-green-700"
         >
           Save Stats
         </button>
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center ">
           <div className="bg-white p-6 rounded-lg shadow-lg w-96">
             <h2 className="text-xl font-semibold mb-4">Select a Player</h2>
             <ul>
               {team1PlayerStats.map((player) => (
                 <li
                   key={player.playerId}
-                  className="cursor-pointer py-2 px-4 hover:bg-gray-200 rounded"
+                  className="cursor-pointer py-2 px-4 hover:bg-gray-200 rounded text-xs"
                   onClick={() => {
                     handleplayerselection(player.playerId)
                   }}
@@ -253,8 +253,8 @@ const Player1StatsPage = () => {
       )}
 
       {saveStatsModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center ">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96 ">
             <h2 className="text-xl font-semibold mb-4">Save Team Stats</h2>
             <input
               type="text"
@@ -272,7 +272,7 @@ const Player1StatsPage = () => {
             />
             <button
               onClick={handleSaveStats}
-              className="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 mr-2"
+              className="bg-green-600 text-white py-2 px-4  rounded-lg hover:bg-green-700 mr-2"
             >
               Save
             </button>

@@ -49,8 +49,8 @@ const page = () => {
       style={{ backgroundImage: "url('/background-pic.jpg')" }}
     >
       <button
-        onClick={() => router.push("/player1")}
-        className="absolute top-4 right-4 bg-white text-blue-700 rounded-lg py-2 px-4 shadow-lg hover:bg-blue-100"
+        onClick={() => router.push("/character")}
+        className="absolute top-4 left-4 bg-white  rounded-lg py-2 px-4 shadow-lg hover:bg-blue-100" style={{color:"#1976d2"}}
       >
         Go Back
       </button>
@@ -65,7 +65,7 @@ const page = () => {
         )}
         <button
           onClick={handleGetTrainingProgram}
-          className="bg-blue-500 text-white px-4 py-2 rounded w-full hover:bg-blue-600 mt-4"
+          className=" text-white px-4 py-2 rounded w-full hover:bg-blue-600 mt-4" style={{backgroundColor:"#1976d2"}}
         >
           Get Training Program
         </button>

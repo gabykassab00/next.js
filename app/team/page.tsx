@@ -9,7 +9,7 @@ const page = () => {
 
       <button 
       onClick={()=>router.push('/character')}
-      className='absolute top-4 right-4 bg-white text-blue-700 rounded-lg py-2 px-4'>
+      className='absolute top-4 left-4 bg-white  rounded-lg py-2 px-4' style={{color:"#1976d2"}}>
         Go Back
       </button>
 
@@ -19,7 +19,7 @@ const page = () => {
         <div className='space-y-4'>
           <button 
           onClick={()=>router.push("/team1")}
-          className='bg-blue-500 text-white py-2 px-4 rounded w-full hover:bg-blue-600'>
+          className=' text-white py-2 px-4 rounded w-full hover:bg-blue-600' style={{backgroundColor:"#1976d2"}}>
             Team 1 
           </button>
           <button 

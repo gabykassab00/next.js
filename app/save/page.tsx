@@ -60,7 +60,7 @@ const Save = () => {
     <div className='min-h-screen flex flex-col items-center justify-center bg-cover bg-center' style={{backgroundImage:"url('/background-pic.jpg')"}}>
       <button 
       onClick={()=>router.push("/welcome")}
-      className='absolute top-4 right-4 bg-white text-blue-700 rounded-lg py-2 px-4 shadow-lg hover:bg-blue-100'>
+      className='absolute top-4 left-4 bg-white  rounded-lg py-2 px-4 shadow-lg hover:bg-blue-100' style={{color:"#1976d2"}}>
         Go Back
       </button>
 

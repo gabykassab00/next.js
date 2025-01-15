@@ -73,17 +73,17 @@ const WelcomePage = () => {
           <Image src="/logo.png" alt="logo" width={50} height={50} className="mx-auto"/>
          </div>
          <h1 className=" text-2xl font-bold mb-2 ">AIPRO</h1>
-         <p className="text-blue-500 mb-2">
+         <p className=" mb-2" style={{color:"#1976d2"}}>
          AIPRO Football Analyzer For in-Depth Match Insights
          </p>
          <p className="text-gray-700 mb-6">Premium AI Analyzer Tool</p>
 
          <div className="space-y-4">
-          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full hover:bg-blue-600" onClick={()=>router.push('/save')}>
+          <button className=" text-white py-2 px-4 rounded-lg w-full hover:bg-blue-600" onClick={()=>router.push('/save')} style={{backgroundColor:"#1976d2"}}>
             Saved Stats
           </button>
           <p className="text-gray-500">Or</p>
-          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full hover:bg-blue-600" onClick={()=>router.push("/upload")}>
+          <button className=" text-white py-2 px-4 rounded-lg w-full hover:bg-blue-600" onClick={()=>router.push("/upload")} style={{backgroundColor:"#1976d2"}}>
             Upload File
           </button>
          </div>

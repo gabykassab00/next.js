@@ -49,7 +49,7 @@ const Upload = () => {
     <div className='min-h-screen flex items-center justify-center bg-cover bg-center' style={{backgroundImage:"url('/background-pic.jpg')"}}>
     
     <button onClick={()=>router.push("/welcome")}
-        className='absolute top-4 right-4 bg-white text-blue-700 rounded-lg py-2 px-4 '>
+        className='absolute top-4 left-4 bg-white  rounded-lg py-2 px-4 ' style={{color:"#1976d2"}}>
         Go Back
     </button>
         
@@ -61,7 +61,7 @@ const Upload = () => {
             type='file'
             onChange={onfilechange}
             className='border p-2 mb-4 w-full'/>
-            <button onClick={uploadfile} className='bg-blue-500 text-white py-2 px-4 rounded w-full hover:bg-blue-600'>
+            <button onClick={uploadfile} className=' text-white py-2 px-4 rounded w-full hover:bg-blue-600' style={{backgroundColor:"#1976d2"}}>
                 Upload
             </button>
             {status && <p className='mt-4 text-sm'>{status}</p>}
