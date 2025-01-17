@@ -55,7 +55,6 @@ const Player1StatsPage = () => {
     const selectedPlayer = team1PlayerStats.find((player) => player.playerId === playerId);
   
     if (!selectedPlayer) {
-      alert("Player not found.");
       return;
     }
   
@@ -99,7 +98,6 @@ const Player1StatsPage = () => {
 
   const handleSaveStats = async () => {
     if (!gameDate || !gameName || !selectedPlayerid) {
-      alert("Please fill out all fields before saving.");
       return;
     }
 
@@ -108,14 +106,12 @@ const Player1StatsPage = () => {
     );
 
     if (!selectedPlayer) {
-      alert("Player not found.");
       return;
     }
 
     try {
       const accessToken = localStorage.getItem("access_token");
       if (!accessToken) {
-        alert("User is not authenticated. Please log in.");
         return;
       }
 
@@ -141,11 +137,9 @@ const Player1StatsPage = () => {
         throw new Error(`Failed to save stats: ${response.status}`);
       }
 
-      alert("Stats saved successfully!");
       setSaveStatsModal(false);
     } catch (err: any) {
       console.error("Error in handleSaveStats:", err.message);
-      alert("Failed to save stats.");
     }
   };
 

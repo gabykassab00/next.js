@@ -13,7 +13,6 @@ const Upload = () => {
 
     const uploadfile = async ()=>{
         if(!file){
-            alert('please select a file first');
             return;
         }
 

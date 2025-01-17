@@ -59,7 +59,6 @@ const Team2PlayerStats = () => {
     const selectedPlayer = team2PlayerStats.find((player) => player.playerId === playerId);
 
     if (!selectedPlayer) {
-      alert("Player not found.");
       return;
     }
 
@@ -94,7 +93,6 @@ const Team2PlayerStats = () => {
 
   const handleSaveStats = async () => {
     if (!gameDate || !gameName || !selectedplayerid) {
-      alert("Please fill out all fields before saving.");
       return;
     }
 
@@ -103,14 +101,12 @@ const Team2PlayerStats = () => {
     );
 
     if (!selectedPlayer) {
-      alert("Player not found.");
       return;
     }
 
     try {
       const accessToken = localStorage.getItem("access_token");
       if (!accessToken) {
-        alert("User is not authenticated. Please log in.");
         return;
       }
 
@@ -136,11 +132,9 @@ const Team2PlayerStats = () => {
         throw new Error(`Failed to save stats: ${response.status}`);
       }
 
-      alert("Stats saved successfully!");
       setSaveStatsModal(false);
     } catch (err: any) {
       console.error("Error in handleSaveStats:", err.message);
-      alert("Failed to save stats.");
     }
   };
 
@@ -238,7 +232,7 @@ const Team2PlayerStats = () => {
             </ul>
             <button
               onClick={() => setshowmodal(false)}
-              className="mt-4 bg-gray-300 text-gray-800 py-2 px-4 rounded hover:bg-gray-400"
+              className="mt-4 bg-gray-300 text-gray-800 py-2 px-4 rounded hover:bg-gray-400 ml-60"
             >
               Close
             </button>
@@ -264,16 +258,16 @@ const Team2PlayerStats = () => {
               onChange={(e) => setGameName(e.target.value)}
             />
             <button
-              onClick={handleSaveStats}
-              className="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 mr-2"
-            >
-              Save
-            </button>
-            <button
               onClick={() => setSaveStatsModal(false)}
-              className="mt-4 bg-gray-300 text-gray-800 py-2 px-4 rounded hover:bg-gray-400"
+              className="mt-4 bg-gray-300 text-gray-800 py-2 px-4 rounded hover:bg-gray-400 mr-2 ml-44"
             >
               Close
+            </button>
+            <button
+              onClick={handleSaveStats}
+              className="bg-green-600 text-white py-2 px-4  rounded-lg hover:bg-green-700 "
+            >
+              Save
             </button>
           </div>
         </div>

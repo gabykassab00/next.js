@@ -45,7 +45,6 @@ const Team1StatsPage = () => {
 
   const handleGetAIResponse = async () => {
     if (!team1Data) {
-      alert("No data available to send.");
       return;
     }
 
@@ -88,13 +87,11 @@ const Team1StatsPage = () => {
 
   const handleSaveStats = async () => {
     if (!team1Data || !gamedate || !gamename) {
-      alert("Please fill out all fields before saving.");
       return;
     }
     try {
       const accessToken = localStorage.getItem("access_token"); 
       if (!accessToken) {
-        alert("User is not authenticated. Please log in.");
         return;
       }
   
@@ -116,11 +113,9 @@ const Team1StatsPage = () => {
         credentials: "include", 
       });
   
-      alert("Stats saved successfully!");
       setshowmodal(false);
     } catch (err: any) {
       console.error("Error in handleSaveStats:", err.message);
-      alert("Failed to save stats.");
     }
   };
 
@@ -201,16 +196,16 @@ const Team1StatsPage = () => {
               onChange={(e) => setgamename(e.target.value)}
             />
             <button
-              onClick={handleSaveStats}
-              className="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 mr-2"
+              onClick={() => setshowmodal(false)}
+              className="mt-4 bg-gray-300 text-gray-800 py-2 px-4 rounded hover:bg-gray-400 mr-2 ml-44"
             >
-              Save
+              Close
             </button>
             <button
-              onClick={() => setshowmodal(false)}
-              className="bg-gray-300 text-gray-800 py-2 px-4 rounded-lg hover:bg-gray-400"
+              onClick={handleSaveStats}
+              className="bg-green-600 text-white py-2 px-4  rounded-lg hover:bg-green-700 "
             >
-              Cancel
+              Save
             </button>
           </div>
         </div>

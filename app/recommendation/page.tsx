@@ -10,7 +10,6 @@ const Page = () => {
 
   const handleGetTrainingProgram = async () => {
     if (!feedback) {
-      alert("No feedback available to send.");
       return;
     }
 

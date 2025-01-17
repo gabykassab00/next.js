@@ -23,7 +23,6 @@ const Save = () => {
     const fetchteamdata = async () =>{
       const accesstoken = localStorage.getItem("access_token");
       if(!accesstoken){
-        alert("user is not authenticated. please log in");
         setloading(false);
         return;
       }

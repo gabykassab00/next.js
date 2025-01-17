@@ -22,7 +22,6 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
         e.preventDefault()
 
         if(password!==confirmPassword){
-            alert("passwords do not match");
             return;
         }
 
@@ -40,7 +39,6 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
             })
             const data = await response.json()
             if(response.ok){
-                alert(signup?"signup successful":"login successful")
                 console.log(signup?"sign up success":"login success",data)
             }
         }catch(error){
@@ -73,7 +71,6 @@ const Login = ({handleshowlogin}:{handleshowlogin:()=>void}) => {
                             document.cookie = `refresh_token=${data.refresh_token}; HttpOnly; Secure`;
                         }
 
-                        alert("login successfull");
                         console.log("login successfull",data)
                         window.location.href = '/welcome'
                     }

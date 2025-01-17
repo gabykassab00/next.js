@@ -54,7 +54,6 @@ const WelcomePage = () => {
         }
     }catch(error){
       console.error("error during logout",error);
-      alert("an error occured while logging out")
     }
   }
 
