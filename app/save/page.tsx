@@ -96,7 +96,7 @@ const Save = () => {
                     {data.average_speed !== null && data.average_speed !== undefined ? `${data.average_speed.toFixed(2)}%` : "N/A"}
                     </td>
                     <td className='py-3 px-6 text-left '>
-                    {data.total_passes !== null && data.total_passes !== undefined ? `${data.total_passes.toFixed(2)}%` : "N/A"}
+                    {data.total_passes !== null && data.total_passes !== undefined ? `${data.total_passes.toFixed(2)}` : "N/A"}
                     </td>
                 </tr>
               ))

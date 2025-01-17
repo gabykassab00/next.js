@@ -13,12 +13,12 @@ const Hero = () => {
           alt="football"
           width={50}
           height={50}
-          className="absolute left-[+30px] top-[-30px] w-10 lg:w-[30px] mt-3"
+          className="absolute left-[+30px] top-[-30px] w-10 lg:w-[30px] mt-3 bg-white "
         />
         <h1 className="bold-52 lg:bold-80 " style={{color:"#1976d2"}}>AIPRO,<br></br>OFFICIALLY RELEASED</h1>
         <h2 className="bold-20">THE SMARTEST AI ANALYZER</h2>
         <p className="regular-16 mt-6 text-gray-30 xl:max-w-[520px] ">
-        The smartest Ai Analyzer and chosen by many top professional clubs to capture,
+        The smartest AI Analyzer and chosen by many top professional clubs to capture,
         review,share and analyze your games & training sessions
         </p>
         <div className="flex w-full gap-3 sm:flex-row mt-2 text-center ">

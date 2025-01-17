@@ -177,26 +177,26 @@ const Team2PlayerStats = () => {
           <table className="min-w-full table-auto bg-white border border-gray-300 rounded-lg shadow-lg">
             <thead>
               <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                <th className="py-3 px-6 text-left">Player ID</th>
-                <th className="py-3 px-6 text-left">Average Speed (km/h)</th>
-                <th className="py-3 px-6 text-left">Total Distance (m)</th>
-                <th className="py-3 px-6 text-left">Total Passes</th>
+                <th className="py-3 px-6 text-left text-sm">Player ID</th>
+                <th className="py-3 px-6 text-left text-sm">Average Speed (km/h)</th>
+                <th className="py-3 px-6 text-left text-sm">Total Distance (m)</th>
+                <th className="py-3 px-6 text-left text-sm">Total Passes</th>
               </tr>
             </thead>
             <tbody className="text-gray-600 text-sm font-light">
-              {team2PlayerStats.map((player, index) => (
+              {team2PlayerStats.slice(0,11).map((player, index) => (
                 <tr
                   key={index}
                   className="border-b border-gray-200 hover:bg-gray-100"
                 >
-                  <td className="py-3 px-6 text-left">{player.playerId}</td>
-                  <td className="py-3 px-6 text-left">
+                  <td className="py-3 px-6 text-left text-xs">{player.playerId}</td>
+                  <td className="py-3 px-6 text-left text-xs">
                     {player.averageSpeed.toFixed(2)}
                   </td>
-                  <td className="py-3 px-6 text-left">
+                  <td className="py-3 px-6 text-left text-xs">
                     {player.totalDistance.toFixed(2)}
                   </td>
-                  <td className="py-3 px-6 text-left">{player.totalPasses}</td>
+                  <td className="py-3 px-6 text-left text-xs">{player.totalPasses}</td>
                 </tr>
               ))}
             </tbody>

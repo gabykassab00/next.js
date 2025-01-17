@@ -188,7 +188,7 @@ const Player1StatsPage = () => {
               </tr>
             </thead>
             <tbody className="text-gray-600 text-sm font-light">
-              {team1PlayerStats.map((player, index) => (
+              {team1PlayerStats.slice(0,11).map((player, index) => (
                 <tr
                   key={index}
                   className="border-b border-gray-200 hover:bg-gray-100"
@@ -271,16 +271,16 @@ const Player1StatsPage = () => {
               onChange={(e) => setGameName(e.target.value)}
             />
             <button
-              onClick={handleSaveStats}
-              className="bg-green-600 text-white py-2 px-4  rounded-lg hover:bg-green-700 mr-2"
-            >
-              Save
-            </button>
-            <button
               onClick={() => setSaveStatsModal(false)}
-              className="mt-4 bg-gray-300 text-gray-800 py-2 px-4 rounded hover:bg-gray-400"
+              className="mt-4 bg-gray-300 text-gray-800 py-2 px-4 rounded hover:bg-gray-400 mr-2 ml-44"
             >
               Close
+            </button>
+            <button
+              onClick={handleSaveStats}
+              className="bg-green-600 text-white py-2 px-4  rounded-lg hover:bg-green-700 "
+            >
+              Save
             </button>
           </div>
         </div>

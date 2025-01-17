@@ -53,7 +53,7 @@ const Upload = () => {
         Go Back
     </button>
         
-        <div className='bg-white p-6 rounded shadow w-80'>
+        <div className='bg-white p-6 rounded shadow w-80 opacity-90'>
             <h1 className='text-lg font-bold mb-4 text-center'>
                 Upload File
             </h1>

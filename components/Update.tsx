@@ -57,7 +57,7 @@ const Update = () => {
           </div>
           <div className="text-left mt-4">
             <p className="text-2xl font-semibold px-6 " color="blue" style={{color:"#1976d2"}}>
-              Introducing AIpro Editor
+             How Python  Operate at AIPRO
             </p>
             <p className="text-sm px-6">
             How do we benefit from being able to develop using a server-less platform

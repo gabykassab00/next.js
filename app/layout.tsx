@@ -24,6 +24,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <title>AIPRO</title>
+      </head>
       <body>
        {shownavbar && < Navbar handleshowlogin={handleshowlogin}></Navbar>}
         <main className="relative overflow-hidden">

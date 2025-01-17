@@ -13,7 +13,7 @@ const page = () => {
         Go Back
       </button>
 
-      <div className='bg-white p-8 rounded shadow w-96'>
+      <div className='bg-white p-8 rounded shadow w-96 opacity-90'>
         <h1 className='text-xl font-bold mb-6 text-center'>are you the coach of team1 or team2?</h1>
 
         <div className='space-y-4'>

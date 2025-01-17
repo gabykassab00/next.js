@@ -4,10 +4,10 @@ import Hero from "@/components/Hero";
 import Review from "@/components/Review";
 import Update from "@/components/Update";
 import Workflow from "@/components/Workflow";
-
 export default function Home() {
   return (
     <>
+
     <Hero></Hero>
     <Workflow></Workflow>
     <Update></Update>

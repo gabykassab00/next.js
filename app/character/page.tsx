@@ -13,8 +13,8 @@ const page = () => {
         Go Back
       </button>
 
-      <div className='bg-white p-8 rounded shadow w-96'>
-        <h1 className='text-xl font-bold mb-6 text-center'>are you a player or a coach ?</h1>
+      <div className='bg-white p-8 rounded shadow w-96 opacity-90'>
+        <h1 className='text-xl font-bold mb-6 text-center'>Are you a Player or a Coach ?</h1>
 
         <div className='space-y-4'>
           <button 
