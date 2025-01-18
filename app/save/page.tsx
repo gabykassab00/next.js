@@ -63,12 +63,12 @@ const Save = () => {
         Go Back
       </button>
 
-      <div className='bg-white p-6 rounded shadow w-4/5 max-w-6xl'>
+      <div className='bg-white p-6 rounded shadow  max-w-6xl'>
       <h1 className='text-3xl font-bold mb-6 text-center text-gray-700'>
         Team Data
       </h1>
       <div className='overflow-x-auto'>
-        <table className='min-w-full table-auto bg-white border border-gray-300 rounded-lg shadow-lg'>
+        <table className='min-w-full table-auto bg-white border border-gray-300 rounded-lg shadow-lg ' style={{width:"60px"}}>
           <thead>
             <tr className='bg-gray-200 text-gray-600 uppercase text-sm leading-normal'>
               <th className='py-3 px-6 text-left'>Date</th>
@@ -79,7 +79,7 @@ const Save = () => {
               <th className='py-3 px-6 text-left'>Total Passes</th>    
             </tr>
           </thead>
-          <tbody className='text-gray-600 text-sm font-light'>
+          <tbody className='text-gray-600 text-sm font-light '>
             {teamdata.length > 0 ? (
               teamdata.map((data,index)=>(
                 <tr key={index} className='border-b border-gray-200 hover:bg-gray-100'>
@@ -89,13 +89,13 @@ const Save = () => {
                     {data.ball_control !== null && data.ball_control !== undefined ? `${data.ball_control.toFixed(2)}%` : "N/A"}
                     </td>
                     <td className='py-3 px-6 text-left '>
-                    {data.distance_covered !== null && data.distance_covered !== undefined ? `${data.distance_covered.toFixed(2)}%` : "N/A"}
+                    {data.distance_covered !== null && data.distance_covered !== undefined ? `${data.distance_covered.toFixed(2)}` : "N/A"}
                     </td>
                     <td className='py-3 px-6 text-left '>
-                    {data.average_speed !== null && data.average_speed !== undefined ? `${data.average_speed.toFixed(2)}%` : "N/A"}
+                    {data.average_speed !== null && data.average_speed !== undefined ? `${data.average_speed.toFixed(2)}` : "N/A"}
                     </td>
                     <td className='py-3 px-6 text-left '>
-                    {data.total_passes !== null && data.total_passes !== undefined ? `${data.total_passes.toFixed(2)}` : "N/A"}
+                    {data.total_passes !== null && data.total_passes !== undefined ? `${data.total_passes}` : "N/A"}
                     </td>
                 </tr>
               ))

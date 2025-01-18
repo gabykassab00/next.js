@@ -3,11 +3,11 @@ import React from "react";
 
 const Update = () => {
   return (
-    <div>
-      <h2 className="text-center font-semibold text-4xl mt-20">
+    <div className="px-4">
+      <h2 className="text-center font-semibold text-3xl sm:text-4xl mt-10">
         Our Latest News & Updates
       </h2>
-      <div className="grid grid-cols-3 gap-5 mt-10 ml-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 ml-8">
         <div className=" shadow-md " style={{ height: "500px",width:"350px" ,marginLeft:"5px" }}>
           <div className="relative w-full" style={{ height: "70%",width:"300px"  }}>
             <Image

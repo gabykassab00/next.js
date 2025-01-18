@@ -2,7 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 interface TeamStats {
   ballControl: number;
   totalPasses: number;
@@ -113,6 +114,7 @@ const Team1StatsPage = () => {
         credentials: "include", 
       });
   
+      toast.success("Stats saved successfully!");
       setshowmodal(false);
     } catch (err: any) {
       console.error("Error in handleSaveStats:", err.message);
@@ -124,6 +126,7 @@ const Team1StatsPage = () => {
       className="min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: "url('/background-pic.jpg')" }}
     >
+      <ToastContainer/>
       <button
         onClick={() => router.push("/team")}
         className="absolute top-4 left-4 bg-white  rounded-lg py-2 px-4 shadow-lg hover:bg-blue-100"style={{color:"#1976d2"}}
@@ -195,7 +198,8 @@ const Team1StatsPage = () => {
               value={gamename}
               onChange={(e) => setgamename(e.target.value)}
             />
-            <button
+
+                      <button
               onClick={() => setshowmodal(false)}
               className="mt-4 bg-gray-300 text-gray-800 py-2 px-4 rounded hover:bg-gray-400 mr-2 ml-44"
             >

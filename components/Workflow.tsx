@@ -3,14 +3,14 @@ import React from "react";
 
 const Workflow = () => {
   return (
-    <div>
-      <h4 className=" font-semibold text-center mb-1 text-gray-600 text-xl mt-10">
+    <div className="px-4">
+      <h4 className=" font-semibold text-center mb-1 text-gray-600 text-lg sm:text-xl mt-10">
         {`Cameras,Analysis Software and Data for sport`}
       </h4>
-      <h2 className="text-center font-semibold text-4xl mt-3">
+      <h2 className="text-center font-semibold text-2xl sm:text-4xl mt-3">
         Designed to improve any team’s workflow
       </h2>
-      <div className="grid grid-cols-4 gap-5 mt-10 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 ">
         <div
           className="flex shadow-md h-96  flex-col0"
           style={{ height: "450px",width:"300px",marginLeft:"auto" }}

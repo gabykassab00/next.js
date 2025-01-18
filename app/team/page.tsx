@@ -14,7 +14,7 @@ const page = () => {
       </button>
 
       <div className='bg-white p-8 rounded shadow w-96 opacity-90'>
-        <h1 className='text-xl font-bold mb-6 text-center'>are you the coach of team1 or team2?</h1>
+        <h1 className='text-xl font-bold mb-6 text-center'>Are you the Coach of Team1 or Team2?</h1>
 
         <div className='space-y-4'>
           <button 

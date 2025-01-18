@@ -2,7 +2,8 @@
 
 import React, { act, useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; 
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 interface PlayerStats {
   playerId: string;
   averageSpeed: number;
@@ -131,7 +132,7 @@ const Team2PlayerStats = () => {
       if (!response.ok) {
         throw new Error(`Failed to save stats: ${response.status}`);
       }
-
+      toast.success("saved successfully")
       setSaveStatsModal(false);
     } catch (err: any) {
       console.error("Error in handleSaveStats:", err.message);
@@ -155,6 +156,7 @@ const Team2PlayerStats = () => {
       className="min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: "url('/background-pic.jpg')" }} 
     >
+      <ToastContainer/>
       <button
         onClick={() => router.push("/player")} 
         className="absolute top-4 left-4 bg-white  rounded-lg py-2 px-4 shadow-lg hover:bg-blue-100" style={{color:"#1976d2"}}
