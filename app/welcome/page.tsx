@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 const WelcomePage = () => {
   const [authenticated, setAuthenticated] = useState(false);
-  // const [file,setfile] = useState(null)
   const router = useRouter();
 
   useEffect(() => {
